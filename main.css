@@ -1,0 +1,349 @@
+* {
+    color: grey;
+    padding: 0;
+    margin: 0;
+}
+/* alluse */
+.shadow-1 {
+    box-shadow: 0 1px 1px rgba(0,0,0,.22);
+}
+.shadow-2 {
+    box-shadow: 0 1px 2px rgba(0,0,0,.22);
+}
+.shadow-5 {
+    box-shadow: 0 1px 5px rgba(0,0,0,.22);
+}
+.marCenter {
+    margin: 0 auto;
+}
+.colorBar {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right,lightblue,pink);
+}
+
+/* header */
+header {
+    height: 50px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+.header-tab-1 {
+    height: auto;
+    list-style: none;
+    margin: 0 50px;
+}
+.header-tab-1 > li {
+    float: left;
+}
+.header-tab-1 > li > a {
+    line-height: 50px;
+    padding:0 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.header-tab-2 {
+    margin: 0;
+    float: right;
+}
+#controlBtn {
+    padding: 0 16px;
+}
+/* blogBody */
+.vBox {
+    width: 90%;
+    margin: 0 auto;
+    min-height: 200px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+.pageTag {
+    width: 90%;
+    margin: 0 auto;
+    background: white;
+    min-height: 200px;
+    margin-top: 30px;
+    display: flex;
+}
+.pageTag > div {
+    flex: 1;
+    position: relative;
+}
+.cardImage {
+    background: url("img/test.jpg") no-repeat top/ cover;
+}
+.readMore {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -21px;
+    margin-left: -21px;
+    color: white;
+    cursor: pointer;
+}
+.readMore > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: grey;
+    z-index: 999;
+}
+.sqReadMore {
+   background: white;
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(45deg);
+    transition: all 0.75s;
+}
+.readMore:hover .sqReadMore {
+    opacity: 0.5;
+    transform: rotateZ(70deg);
+}
+.hiddenSquare {
+    width: 0;
+    height: 0;
+    border-bottom: 200px solid white;
+    border-left: 100px solid transparent;
+    border-right: 0 solid transparent;
+    position: absolute;
+    right: 0;
+}
+.ovo {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 34px;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+.ovo-icon {
+    width: auto;
+    height: 100%;
+    line-height: 34px;
+    font-size: 18px;
+    float: right;
+}
+.dataIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 0 10px;
+    float: right;
+}
+.dataIcon > i {
+    font-size: 18px;
+    color: palevioletred;
+}
+/* blogControl */
+.control {
+    width: 90%;
+    margin: 0 auto;
+    min-height: 200px;
+    margin-top: 30px;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+.control-border {
+    margin: 8px 0 !important;
+}
+.sortBy {
+    display: flex;
+}
+.sortBy > button {
+    flex: 1;
+}
+.boaCon {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+.nextPage {
+    margin-top: 20px;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    text-align: center;
+}
+#pageNum {
+    width: 40%;
+}
+.changePageBtn {
+    width: 30%;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 50px;
+    background: white;
+    margin-top: 30px;
+    border-top: 1px solid rgba(0,0,0,.17);
+    line-height: 50px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* newPageEdit */
+
+.newPageEdit {
+    min-height: 300px;
+    padding: 12px;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+.title-child {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+}
+.title-child > div {
+    margin-right: 20px;
+    display: flex;
+}
+.addTag {
+    align-items: center;
+}
+.addTag button {
+    margin-right: 10px;
+}
+.addTag {
+    font-size: 19px;
+}
+.edit {
+    margin: 20px 0;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.introduction {
+    min-height: 125px;
+}
+.pageEdit {
+    min-height: 500px;
+}
+
+/* PAGE */
+.pageBody {
+    padding: 16px;
+    min-height: 400px;
+    position: relative;
+}
+.pageHead {
+    letter-spacing: 1px;
+    padding: 0 20px;
+}
+.pageHead > span {
+    float: right;
+    margin-left: 20px;
+}
+.taptap {
+    display: flex;
+    height: 30px;
+}
+.taptap > span {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+.taptap > span > i {
+    font-size: 18px;
+    margin-right: 3px;
+}
+.iLike {
+    position: absolute !important;
+    right: -25px;
+    top: 12px;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    outline: none;
+    border: 5px solid white;
+    box-shadow: 0 3px 10px rgba(0,0,0,.22);
+}
+.iLike > i {
+    font-size: 30px;
+}
+.pageContent {
+    padding: 0 35px;
+}
+.sibi {
+    margin-top: 20px;
+    min-height: 200px;
+    padding: 12px;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+.newBB > form {
+    display: flex;
+}
+.newBB > form > div {
+    flex: 1;
+}
+.newBB > form > div > div {
+    margin: 0 30px;
+}
+.userBB {
+    padding: 0 !important;
+    margin-top: 20px;
+    min-height: 120px;
+}
+.userBB > .colorBar {
+    height: 3px;
+}
+.sendBtn {
+    position: relative;
+}
+.sendBtn > button {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+.userData {
+    position: relative;
+    height: 100px;
+    padding: 5px 20px;
+    margin: 10px 0;
+}
+.userIcon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    background: url("img/icon.jpg") no-repeat center / cover;
+}
+.userName {
+    min-width: 200px;
+    height: 100px;
+    position: absolute;
+    right: -200px;
+    padding-left: 12px;
+    box-sizing: border-box;
+}
+.name {
+    font-size: 18px;
+    height: 60px;
+    line-height: 60px;
+}
+.Jurisdiction {
+    height: 20px;
+}
+.userBB-Content {
+    width: 100%;
+    min-height: 70px;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
