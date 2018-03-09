@@ -39,7 +39,7 @@ $this->need('header.php');
                                 <div class="dataIcon mdui-ripple">
                                     <i class="mdui-icon material-icons">favorite</i>
                                     <span style="margin: 0 3px">:</span>
-                                    <span>123</span>
+                                    <span>null</span>
                                 </div>
                             </div>
                             <div class="ovo-icon">
@@ -59,7 +59,7 @@ $this->need('header.php');
                 <div class="control borR5px shadow-2">
                     <div class="mdui-textfield mdui-textfield-expandable">
                         <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
-                        <input class="mdui-textfield-input" type="text" placeholder="Search"/>
+                        <input class="mdui-textfield-input" type="text" placeholder="搜索"/>
                         <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
                     </div>
                     <div class="mdui-divider control-border"></div>
@@ -93,7 +93,7 @@ $this->need('header.php');
                             <span class="changePageBtn mdui-ripple">
                                 <i class="mdui-icon material-icons">keyboard_arrow_left</i>
                             </span>
-                            <span id="pageNum">PageNum : 0</span>
+                            <span id="pageNum">Num : 0</span>
                             <span class="changePageBtn mdui-ripple">
                                 <i class="mdui-icon material-icons">&#xe315;</i>
                             </span>
