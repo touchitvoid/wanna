@@ -12,10 +12,12 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 ?>
     <div class="mdui-container-fluid blogBody">
-    <div class="left-page-list mdui-col-md-9">
-<?php while($this->next()): ?>
+        <div class="bg-ovo"></div>
+    <div class="left-page-list mdui-col-md-8">
+    <?php while($this->next()): ?>
                 <div class="pageTag shadow-5">
                     <div class="cardImage">
+                        <div class="cardImage-img"></div>
                         <a href="<?php $this->permalink() ?>">
                             <div class="readMore">
                                 <div><i class="mdui-icon material-icons">keyboard_arrow_left</i></div>
@@ -27,7 +29,9 @@ $this->need('header.php');
                     <div class="cardContent">
                         <div class="mdui-typo">
                             <h4><?php $this->title() ?></h4>
-                            <a><?php $this->author(); ?></a>&nbsp<a><?php $this->date('F j, Y'); ?></a>&nbsp;<a><?php $this->category(','); ?></a>
+                            作者：<a><?php $this->author(); ?></a>&nbsp
+                            时间：<a><?php $this->date('F j, Y'); ?></a>&nbsp
+                            标签：<a><?php $this->category(','); ?></a>
                             <p><?php $this->content('Continue Reading...'); ?></p>
                         </div>
                         <div class="ovo">
@@ -48,11 +52,11 @@ $this->need('header.php');
                         </div>
                     </div>
                 </div>
-<?php endwhile; ?>
+    <?php endwhile; ?><!--循环输出评论-->
             </div>
-        <div class="right-pageTagMenu mdui-col-md-3">
-            <div class="vBox" style="margin: 0">
-                <div class="control shadow-5">
+        <div class="right-pageTagMenu mdui-col-md-3 mdui-col-offset-md-1">
+            <div class="vBox">
+                <div class="control borR5px shadow-2">
                     <div class="mdui-textfield mdui-textfield-expandable">
                         <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
                         <input class="mdui-textfield-input" type="text" placeholder="Search"/>
@@ -68,9 +72,21 @@ $this->need('header.php');
                         </div>
                         <div class="colorBar"></div>
                         <div class="mdui-typo">
-                            <h4>公告</h4>
-                            <div class="boaCon marCenter shadow-1">
-                                You can call my name
+                            <h5>最新回复</h5>
+                            <div class="boaCon marCenter">
+                                <ul>
+                                    <?php $this->widget('Widget_Comments_Recent')->to($comments); ?>
+                                    <?php while($comments->next()): ?>
+                                        <li><?php $comments->author(false); ?>: <a href="<?php $comments->permalink(); ?>"><?php $comments->excerpt(15, '...'); ?></a></li>
+                                    <?php endwhile; ?>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>文章分类</h5>
+                                <ul>
+                                    <?php $this->widget('Widget_Metas_Category_List')
+                                        ->parse('<li><a href="{permalink}">{name}</a> ({count})</li>'); ?>
+                                </ul>
                             </div>
                         </div>
                         <div class="nextPage">

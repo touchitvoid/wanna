@@ -1,7 +1,9 @@
 * {
-    color: grey;
     padding: 0;
     margin: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 300 !important;
 }
 /* alluse */
 .shadow-1 {
@@ -21,13 +23,18 @@
     height: 2px;
     background: linear-gradient(to right,lightblue,pink);
 }
+.borR5px {
+    border-radius: 5px;
+}
 
 /* header */
 header {
+    color: rgba(0,0,0,.5) !important;
     height: 50px;
-    border-bottom: 1px solid lightgray;
     margin-bottom: 25px;
     box-sizing: border-box;
+    background-color: hsla(0,0%,100%,.4);
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 .header-tab-1 {
     height: auto;
@@ -51,6 +58,9 @@ header {
     padding: 0 16px;
 }
 /* blogBody */
+.blogBody {
+    color: gray;
+}
 .vBox {
     width: 90%;
     margin: 0 auto;
@@ -58,20 +68,42 @@ header {
     padding-bottom: 30px;
     box-sizing: border-box;
 }
+.bg-ovo {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: url("img/bg.jpg") no-repeat center / cover;
+    filter: blur(4px);
+    opacity: .8;
+    z-index: -100;
+}
 .pageTag {
     width: 90%;
     margin: 0 auto;
     background: white;
-    min-height: 200px;
+    height: 200px;
     margin-top: 30px;
     display: flex;
+    overflow: hidden;
 }
 .pageTag > div {
     flex: 1;
     position: relative;
 }
 .cardImage {
+    overflow: hidden;
+}
+.cardImage-img {
+    width: 100%;
+    height: 100%;
     background: url("img/test.jpg") no-repeat top/ cover;
+    transition: all 0.3s;
+    position: absolute;
+}
+.cardImage-img:hover {
+    transform: scale(1.08);
 }
 .readMore {
     width: 40px;
@@ -119,6 +151,7 @@ header {
     bottom: 0;
     width: 100%;
     height: 34px;
+    background: white;
     padding: 0 12px;
     box-sizing: border-box;
 }
@@ -146,10 +179,16 @@ header {
 .control {
     width: 90%;
     margin: 0 auto;
-    min-height: 200px;
+    min-height: 300px;
     margin-top: 30px;
-    padding: 20px 12px;
+    padding: 20px 18px;
     box-sizing: border-box;
+    background-color: white;
+    opacity : 0.9;
+    transition: opacity 0.5s;
+}
+.control:hover {
+    opacity: 1;
 }
 .control-border {
     margin: 8px 0 !important;
@@ -162,10 +201,16 @@ header {
 }
 .boaCon {
     width: 100%;
-    min-height: 100px;
-    padding: 10px;
-    box-sizing: border-box;
+    height: 148px;
     letter-spacing: 1px;
+    overflow: hidden;
+}
+.boaCon > ul {
+    padding: 0;
+}
+.boaCon > ul > li {
+    list-style: none;
+    line-height: 37px;
 }
 .nextPage {
     margin-top: 20px;
@@ -185,9 +230,11 @@ header {
 footer {
     width: 100%;
     height: 50px;
-    background: white;
     margin-top: 30px;
-    border-top: 1px solid rgba(0,0,0,.17);
+    position: fixed;
+    background: white;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0,0,0,.1);
     line-height: 50px;
     text-align: center;
     font-size: 14px;
@@ -196,7 +243,7 @@ footer {
 
 /* newPageEdit */
 
-.newPageEdit {
+/*.newPageEdit {
     min-height: 300px;
     padding: 12px;
     box-sizing: border-box;
@@ -230,7 +277,7 @@ footer {
 }
 .pageEdit {
     min-height: 500px;
-}
+}*/
 
 /* PAGE */
 .pageBody {
@@ -281,7 +328,7 @@ footer {
     min-height: 200px;
     padding: 12px;
     box-sizing: border-box;
-    padding-bottom: 30px;
+    padding-bottom: 70px;
 }
 .newBB > form {
     display: flex;

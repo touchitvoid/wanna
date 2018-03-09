@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="<?php $this->options->charset(); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <title><?php $this->options->title(); ?><?php $this->archiveTitle(); ?></title>
     <link rel="stylesheet" type="text/css" media="all" href="<?php $this->options->themeUrl('main.css'); ?>" />
     <link rel="stylesheet" type="text/css" media="all" href="<?php $this->options->themeUrl('mdui.min.css'); ?>" />
