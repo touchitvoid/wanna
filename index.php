@@ -53,6 +53,7 @@ $this->need('header.php');
                     </div>
                 </div>
     <?php endwhile; ?><!--循环输出评论-->
+        <?php $this->pageNav('<i class="mdui-icon material-icons">keyboard_arrow_left</i>', '<i class="mdui-icon material-icons">&#xe315;</i>'); ?>
             </div>
         <div class="right-pageTagMenu mdui-col-md-3 mdui-col-offset-md-1">
             <div class="vBox">
