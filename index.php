@@ -37,13 +37,6 @@ $this->need('header.php');
                         <div class="ovo">
                             <div class="ovo-icon">
                                 <div class="dataIcon mdui-ripple">
-                                    <i class="mdui-icon material-icons">favorite</i>
-                                    <span style="margin: 0 3px">:</span>
-                                    <span>null</span>
-                                </div>
-                            </div>
-                            <div class="ovo-icon">
-                                <div class="dataIcon mdui-ripple">
                                     <i class="mdui-icon material-icons">check</i>
                                     <span style="margin: 0 3px">:</span>
                                     <span><?php $this->commentsNum('%d Comments'); ?></span>
@@ -94,7 +87,7 @@ $this->need('header.php');
                                 </ul>
                             </div>
                         </div>
-                        <div class="nextPage">
+                        <!--<div class="nextPage">
                             <span class="changePageBtn mdui-ripple">
                                 <i class="mdui-icon material-icons">keyboard_arrow_left</i>
                             </span>
@@ -102,11 +95,38 @@ $this->need('header.php');
                             <span class="changePageBtn mdui-ripple">
                                 <i class="mdui-icon material-icons">&#xe315;</i>
                             </span>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        foo = false;
+        $(window).scroll(function () {
+            var sS = document.documentElement.scrollTop;
+            var sSs = window.innerHeight;
+            var ssr = sS+sSs;
+            var sH = document.documentElement.scrollHeight;
+            console.log(sS+' '+sSs+'>>'+sH);
+            console.log(ssr);
+            console.log('foo :'+foo);
+            if (ssr > (sH-60) && foo == false){
+                $('footer').stop(true,false).animate({
+                    opacity : '1',
+                    bottom : '0'
+                },function () {
+                    foo = true;
+                })
+            }else if (ssr < (sH-60) && foo == true){
+                $('footer').stop(true,false).animate({
+                    opacity : '0',
+                    bottom : '-50px'
+                },function () {
+                    foo = false;
+                })
+            }
+        })
+    </script>
 <?php $this->need('sidebar.php'); ?>
 <?php $this->need('footer.php'); ?>

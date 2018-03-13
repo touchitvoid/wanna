@@ -26,6 +26,35 @@ h1,h2,h3,h4,h5,h6 {
 .borR5px {
     border-radius: 5px;
 }
+@media screen and (max-width: 600px){
+    .pageTag {
+        width: 100% !important;
+    }
+    .vBox {
+        width: 100% !important;
+        padding-bottom: 0 !important;
+    }
+    /* 侧边栏适配方案 */
+    .control {
+        width: 100% !important;
+        padding-bottom: 70px !important;
+    }
+    .blogBody {
+        margin-bottom: 0 !important;
+    }
+    .right-pageTagMenu {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .blogBody.mdui-container-fluid {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .control {
+        border-radius: 0 !important;
+        opacity: 1 !important;
+    }
+}
 
 /* header */
 header {
@@ -56,7 +85,7 @@ header {
     float: right;
 }
 #controlBtn {
-    padding: 0 16px;
+    padding: 0 10px;
 }
 /* blogBody */
 .blogBody {
@@ -104,7 +133,7 @@ header {
     transition: all 0.5s;
     position: absolute;
 }
-.cardImage-img:hover {
+.cardImage:hover .cardImage-img {
     transform: scale(1.1);
 }
 .readMore {
@@ -183,17 +212,19 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 30px;
 }
 .page-navigator > li {
     display: inline-block;
-    padding: 5px 20px;
-    margin: 0 4px;
-    border-radius: 5px;
+    height: 100%;
+    margin: 0 3px;
     font-size: 1em;
-    transition: all 0.5s;
+    width: 50px;
+    line-height: 30px;
+    transition: all .5s;
 }
-.next,.prev {
-    padding: 2px 20px !important;
+.page-navigator > li:hover {
+    background: rgba(0,0,0,.1);
 }
 .page-navigator > li > a {
     font-size: 1em;
@@ -207,14 +238,15 @@ header {
     margin-top: 30px;
 }
 .nav {
-    background: hsla(0,0%,100%,.8);
-    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    background-color: hsla(0,0%,100%,.15);
     display: inline-block;
     border-radius: 3px;
-    transition: all 0.5s;
+    transition: all .75s;
+    padding: 0 50px;
 }
 .nav:hover {
-    background: white;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    background-color: hsla(0,0%,100%,.5);
 }
 /* blogControl */
 .control {
@@ -277,12 +309,13 @@ footer {
     height: 50px;
     position: fixed;
     background: white;
-    bottom: 0;
-    box-shadow: 0 -1px 2px rgba(0,0,0,.1);
+    bottom: -50px;
     line-height: 50px;
     text-align: center;
     font-size: 14px;
     letter-spacing: 1px;
+    z-index: 999;
+    opacity: 0;
 }
 
 /* newPageEdit */

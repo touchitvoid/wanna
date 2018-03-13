@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<header>
+<header class="mdui-hidden-xs">
     <ul class="header-tab-1">
          <li class="mdui-ripple"><a href="<?php $this->options->siteUrl(); ?>">主页</a></li>
          <li class="mdui-ripple"><a>留言</a></li>
@@ -23,7 +23,7 @@
     <ul class="header-tab-1 header-tab-2" >
                     <li>欢迎回来 <a href="#">Void</a></li>
                     <li class="mdui-color-pink mdui-ripple" id="controlBtn">
-                        <a href="http://localhost:2333/admin"><i class="mdui-icon material-icons" style="color: white">computer</i></a>
+                        <a href="http://localhost:2333/admin"><i class="material-icons mdui-icon">computer</i></a>
                     </li>
     </ul>
 </header>
