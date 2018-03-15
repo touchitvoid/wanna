@@ -21,9 +21,13 @@
          <li class="mdui-ripple"><a>关于</a></li>
     </ul>
     <ul class="header-tab-1 header-tab-2" >
-                    <li>欢迎回来 <a href="#">Void</a></li>
+        <?php if($this->user->hasLogin()): ?>
+                    <li>欢迎回来 <a href="#"><?php $this->user->screenName(); ?></a></li>
+        <?php else: ?>
+            <li><a href="<?php $this->options->adminUrl(); ?>">我开始有点喜欢你了耶</a></li>
+        <?php endif; ?>
                     <li class="mdui-color-pink mdui-ripple" id="controlBtn">
-                        <a href="http://localhost:2333/admin"><i class="material-icons mdui-icon">computer</i></a>
+                        <a href="<?php $this->options->adminUrl(); ?>"><i class="material-icons mdui-icon">computer</i></a>
                     </li>
     </ul>
 </header>

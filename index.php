@@ -111,7 +111,7 @@ $this->need('header.php');
             console.log(sS+' '+sSs+'>>'+sH);
             console.log(ssr);
             console.log('foo :'+foo);
-            if (ssr > (sH-60) && foo == false){
+            if (ssr === sH && foo == false){
                 $('footer').stop(true,false).animate({
                     opacity : '1',
                     bottom : '0'
