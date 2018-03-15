@@ -19,7 +19,7 @@ $this->need('header.php');
                     <div class="cardImage">
                         <div class="cardImage-img"></div>
                         <a href="<?php $this->permalink() ?>">
-                            <div class="readMore">
+                            <div class="readMore" mdui-tooltip="{content: '阅读全文'}">
                                 <div><i class="mdui-icon material-icons">keyboard_arrow_left</i></div>
                                 <div class="sqReadMore"></div>
                             </div>
@@ -87,15 +87,6 @@ $this->need('header.php');
                                 </ul>
                             </div>
                         </div>
-                        <!--<div class="nextPage">
-                            <span class="changePageBtn mdui-ripple">
-                                <i class="mdui-icon material-icons">keyboard_arrow_left</i>
-                            </span>
-                            <span id="pageNum">Num : 0</span>
-                            <span class="changePageBtn mdui-ripple">
-                                <i class="mdui-icon material-icons">&#xe315;</i>
-                            </span>
-                        </div>-->
                     </div>
                 </div>
             </div>

@@ -65,23 +65,52 @@ h1,h2,h3,h4,h5,h6 {
         display: none !important;
     }
     .cardImage {
-        height: 150px !important;
+        min-height: 150px !important;
+    }
+    .cardContent {
+        height: auto !important;
+    }
+    /* header适配方案 */
+    .header-tab-1 > li {
+        float: none !important;
+    }
+    .header-tab-2 {
+        text-align: right;
+        float: none !important;
+    }
+    header {
+        z-index: 99999;
+        position: fixed;
+        top: -250px;
+    }
+    #controlBtn {
+        display: block !important;
+    }
+    /*  文章页 */
+    .pageBody,.blogBody {
+        margin-top: 70px;
     }
 }
 
 /* header */
 header {
+    width: 100%;
     color: rgba(0,0,0,.5) !important;
-    height: 50px;
+    min-height: 50px;
     margin-bottom: 25px;
     box-sizing: border-box;
     background-color: hsla(0,0%,100%,.4);
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
+#controlBtn {
+    display: none;
+}
+#loginOutUrl {
+    padding-left: 0;
+}
 .header-tab-1 {
     height: auto;
     list-style: none;
-    margin: 0 50px;
 }
 .header-tab-1 > li {
     float: left;
@@ -96,9 +125,6 @@ header {
 .header-tab-2 {
     margin: 0;
     float: right;
-}
-#controlBtn {
-    padding: 0 10px;
 }
 /* blogBody */
 .blogBody {
@@ -142,6 +168,7 @@ header {
     overflow: hidden;
 }
 .cardContent {
+    height: 200px;
     background: white;
     padding-bottom: 34px;
     box-sizing: border-box;
@@ -195,7 +222,7 @@ header {
     width: 0;
     height: 0;
     border-bottom: 200px solid white;
-    border-left: 100px solid transparent;
+    border-left: 70px solid transparent;
     border-right: 0 solid transparent;
     position: absolute;
     right: 0;
