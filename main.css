@@ -26,71 +26,6 @@ h1,h2,h3,h4,h5,h6 {
 .borR5px {
     border-radius: 5px;
 }
-@media screen and (max-width: 600px){
-    .pageTag {
-        width: 100% !important;
-    }
-    .vBox {
-        width: 100% !important;
-        padding-bottom: 0 !important;
-    }
-    /* 侧边栏适配方案 */
-    .control {
-        width: 100% !important;
-        padding-bottom: 70px !important;
-    }
-    .blogBody {
-        margin-bottom: 0 !important;
-    }
-    .right-pageTagMenu {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-    .blogBody.mdui-container-fluid {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-    .control {
-        border-radius: 0 !important;
-        opacity: 1 !important;
-    }
-    /* 文章卡片移动端适配 */
-    .pageTag {
-        display: block !important;
-    }
-    .pageTag > div {
-        width: 100% !important;
-    }
-    .hiddenSquare {
-        display: none !important;
-    }
-    .cardImage {
-        min-height: 150px !important;
-    }
-    .cardContent {
-        height: auto !important;
-    }
-    /* header适配方案 */
-    .header-tab-1 > li {
-        float: none !important;
-    }
-    .header-tab-2 {
-        text-align: right;
-        float: none !important;
-    }
-    header {
-        z-index: 99999;
-        position: fixed;
-        top: -250px;
-    }
-    #controlBtn {
-        display: block !important;
-    }
-    /*  文章页 */
-    .pageBody,.blogBody {
-        margin-top: 70px;
-    }
-}
 
 /* header */
 header {
@@ -373,6 +308,7 @@ footer {
     min-height: 400px;
     position: relative;
     background: white;
+    color: gray;
 }
 .pageHead {
     letter-spacing: 1px;
@@ -383,15 +319,21 @@ footer {
     margin-left: 20px;
 }
 .taptap {
-    display: flex;
-    height: 30px;
+    width: 100%;
+    min-height: 30px;
 }
-.taptap > span {
+.taptap > div {
+    width: 50%;
+    display: inline-block;
+}
+.pageDataRight {
+    float: right;
+    text-align: right;
+}
+.taptap > div > span {
     margin-right: 15px;
-    display: flex;
-    align-items: center;
 }
-.taptap > span > i {
+.taptap > div > span > i {
     font-size: 18px;
     margin-right: 3px;
 }
@@ -405,11 +347,13 @@ footer {
     box-sizing: border-box;
     padding-bottom: 30px;
     background: white;
+    color: gray;
 }
 .newBB > form {
     display: flex;
+    height: auto;
 }
-.newBB > form > div {
+.newBB > form > .newCom {
     flex: 1;
 }
 .newBB > form > div > div {
@@ -424,6 +368,7 @@ footer {
     height: 3px;
 }
 .sendBtn {
+    flex-basis: 150px;
     position: relative;
 }
 .sendBtn > button {
@@ -436,7 +381,6 @@ footer {
 }
 .userData {
     position: relative;
-    height: 100px;
     padding: 5px 20px;
     margin: 10px 0;
 }
@@ -469,4 +413,107 @@ footer {
     padding: 10px 12px;
     box-sizing: border-box;
     margin-bottom: 10px;
+}
+@media screen and (max-width: 600px){
+    .pageTag {
+        width: 100% !important;
+    }
+    .vBox {
+        width: 100% !important;
+        padding-bottom: 0 !important;
+    }
+    /* 侧边栏适配方案 */
+    .control {
+        width: 100% !important;
+        padding-bottom: 70px !important;
+    }
+    .blogBody {
+        margin-bottom: 0 !important;
+    }
+    .right-pageTagMenu {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .blogBody.mdui-container-fluid {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .control {
+        border-radius: 0 !important;
+        opacity: 1 !important;
+    }
+    /* 文章卡片移动端适配 */
+    .pageTag {
+        display: block !important;
+    }
+    .pageTag > div {
+        width: 100% !important;
+    }
+    .hiddenSquare {
+        display: none !important;
+    }
+    .cardImage {
+        min-height: 150px !important;
+    }
+    .cardContent {
+        height: auto !important;
+    }
+    /* header适配方案 */
+    .header-tab-1 > li {
+        float: none !important;
+    }
+    .header-tab-2 {
+        text-align: right;
+        float: none !important;
+    }
+    header {
+        z-index: 99999;
+        position: fixed;
+        top: -250px;
+        background: white !important;
+    }
+    #controlBtn {
+        display: block !important;
+    }
+    /*  页面与header的交互 */
+    .pageBody,.blogBody {
+        margin-top: 70px;
+    }
+
+    /* post评论表单 */
+    .newBB > form {
+        display: block !important;
+    }
+    .sendBtn > button {
+        position: relative !important;
+        bottom: 0 !important;
+        margin: 10px 0;
+    }
+    .newBB > form > div > div {
+        margin: 0;
+    }
+    /* 用户评论 */
+    .userIcon {
+        width: 70px;
+        height: 70px;
+    }
+    .userName {
+        height: 70px;
+    }
+    .name {
+        height: 45px;
+        line-height: 45px;
+    }
+    .Jurisdiction {
+        height: 25px;
+        line-height: 25px;
+    }
+    /* 文章详情 */
+    .taptap > div {
+        width: 100%;
+    }
+    .pageDataRight {
+        float: none;
+        text-align: left;
+    }
 }

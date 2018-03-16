@@ -11,27 +11,27 @@
                      <?php if($this->user->hasLogin()): ?>
                                 <p><?php _e('登录身份: '); ?><a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?> &raquo;</a></p>
                             <?php else: ?>
-                            <div>
+                         <div class="newCom">
                                 <div class="mdui-textfield mdui-textfield-floating-label">
                                     <label class="mdui-textfield-label"><?php _e('称呼'); ?></label>
                                     <input class="mdui-textfield-input" type="text" name="author" required/>
                                 </div>
                             </div>
-                            <div>
+                         <div class="newCom">
                                 <div class="mdui-textfield mdui-textfield-floating-label">
                                     <label <?php if ($this->options->commentsRequireMail): ?> class="mdui-textfield-label"<?php endif; ?>><?php _e('Email'); ?></label>
                                     <input type="email" name="mail" class="mdui-textfield-input" <?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> />
                                 </div>
                             </div>
                      <?php endif; ?>
-                        <div>
+                        <div class="newCom">
                             <div class="mdui-textfield mdui-textfield-floating-label">
                                 <label class="mdui-textfield-label"><?php _e('内容'); ?></label>
                                 <textarea name="text" class="mdui-textfield-input" required ><?php $this->remember('text'); ?></textarea>
                             </div>
                         </div>
                             <div class="sendBtn">
-                                <button class="mdui-btn mdui-color-pink" type="submit"><?php _e('<i class="mdui-icon material-icons">check</i>'); ?></button>
+                                <button class="mdui-btn mdui-btn-block mdui-color-pink" type="submit"><?php _e('<i class="mdui-icon material-icons">check</i>'); ?></button>
                             </div>
                     </form>
                  <?php else: ?>
@@ -46,7 +46,7 @@
                     <div class="userIcon">
                         <div class="userName">
                             <div class="name"><?php $comments->author(); ?></div>
-                            <div class="Jurisdiction"><?php $comments->date('F jS, Y'); ?>&nbsp<?php $comments->date('h:i a'); ?></div>
+                            <div class="Jurisdiction"><?php $comments->date('Y ,F jS'); ?>&nbsp<?php $comments->date('h:i'); ?></div>
                         </div>
                     </div>
                 </div>

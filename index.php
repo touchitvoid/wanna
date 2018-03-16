@@ -54,7 +54,7 @@ $this->need('header.php');
             </div>
         <div class="right-pageTagMenu mdui-col-md-3 mdui-col-offset-md-1">
             <div class="vBox">
-                <div class="control borR5px shadow-2">
+                <div class="control shadow-2">
                     <div class="mdui-textfield mdui-textfield-expandable">
                         <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
                         <input class="mdui-textfield-input" type="text" placeholder="搜索"/>

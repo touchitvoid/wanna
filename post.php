@@ -5,17 +5,23 @@
     <div class="bg-ovo"></div>
     <div class="mdui-typo pageHead">
         <h3><?php $this->title() ?></h3>
-        <span>Author : <a><?php $this->author() ?></a></span>
-        <span>Date : <?php $this->date('F j, Y'); ?></span>
         <div class="taptap">
-            <span><i class="mdui-icon material-icons">check</i>View：<a><?php $this->commentsNum('%d Comments'); ?></a></span>
-            <span><i class="mdui-icon material-icons">favorite</i>Like：<a>2</a></span>
-            <span><i class="mdui-icon material-icons">change_history</i>Tags：<?php $this->category(','); ?></span>
+            <div>
+                <span><i class="mdui-icon material-icons">check</i>View：<a><?php $this->commentsNum('%d Comments'); ?></a></span>
+                <span><i class="mdui-icon material-icons">change_history</i>Tags：<?php $this->category(','); ?></span>
+            </div>
+            <div class="pageDataRight">
+                <span>
+                    作者 : <a><?php $this->author() ?></a></span>
+                <span>
+                    <i class="mdui-icon material-icons">date_range</i>日期 : <?php $this->date('F j, Y'); ?></span>
+            </div>
+
         </div>
     </div>
     <div class="mdui-divider" style="margin: 10px 0"></div>
     <div class="mdui-typo pageContent">
-        <h4>test</h4>
+        <h4></h4>
         <p><?php $this->content('Continue Reading...'); ?></p>
     </div>
 </div>
