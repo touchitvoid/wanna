@@ -26,16 +26,23 @@ h1,h2,h3,h4,h5,h6 {
 .borR5px {
     border-radius: 5px;
 }
-
+.position-ab-right {
+    right: 0;
+}
+body {
+    padding-top: 80px;
+}
 /* header */
 header {
     width: 100%;
-    color: rgba(0,0,0,.5) !important;
+    position: fixed;
+    top: 0;
     min-height: 50px;
     margin-bottom: 25px;
     box-sizing: border-box;
     background-color: hsla(0,0%,100%,.4);
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    padding: 0 30px;
 }
 #controlBtn {
     display: none;
@@ -46,6 +53,7 @@ header {
 .header-tab-1 {
     height: auto;
     list-style: none;
+    box-sizing: border-box;
 }
 .header-tab-1 > li {
     float: left;
@@ -55,16 +63,28 @@ header {
     padding:0 20px;
     cursor: pointer;
     text-decoration: none;
-    color: rgba(0,0,0,.5) !important;
+    color: rgba(0,0,0,.5);
 }
 .header-tab-2 {
     margin: 0;
     float: right;
 }
 /* blogBody */
+.nice {
+    width: 90%;
+    min-height: 100px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+    background: linear-gradient(to right,lightblue,pink);
+    color: white;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
 .blogBody {
     color: gray;
-    margin-bottom: 80px;
 }
 .vBox {
     width: 90%;
@@ -114,7 +134,7 @@ header {
 .cardImage-img {
     width: 100%;
     height: 100%;
-    background: url("img/test.jpg") no-repeat top/ cover;
+    background: url("img/test.jpg") no-repeat center/ cover;
     transition: all 0.5s;
     position: absolute;
 }
@@ -234,34 +254,55 @@ header {
 }
 /* blogControl */
 .control {
+    border-radius: 5px;
     width: 90%;
+    min-height: 500px;
     margin: 0 auto;
-    min-height: 300px;
     margin-top: 30px;
     padding: 20px 18px;
     box-sizing: border-box;
     background-color: white;
-    opacity : 0.9;
-    transition: opacity 0.75s;
-}
-.control:hover {
-    opacity: 1;
 }
 .control-border {
     margin: 8px 0 !important;
 }
 .sortBy {
     display: flex;
+    position: relative;
 }
-.sortBy > button {
-    min-width: 1px;
+.sortBy > div {
     flex: 1;
+    position: relative;
+}
+.sortBy > div > button {
+    min-width: 100%;
     font-size: 0.88em;
     padding: 0;
+    z-index: 1;
+}
+.cat {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -15px;
+    opacity: 0;
+    background: url("img/tab_cat.png") no-repeat right top / 20px;
+    z-index: 0;
+}
+.cat1 {
+    opacity: 1;
+    top: 0;
+    /* 神奇的操作 */
+}
+.tabCard {
+    display: none;
+}
+.firstTabCard {
+    display: block;
 }
 .boaCon {
     width: 100%;
-    max-height: 148px;
+    max-height: 185x;
     letter-spacing: 1px;
     overflow: hidden;
 }
@@ -278,6 +319,59 @@ header {
     height: 30px;
     line-height: 30px;
     display: flex;
+    text-align: center;
+}
+.page-tag-switch {
+    width: 100%;
+    height: 190px;
+    position: relative;
+    margin: 0 auto;margin-top: 20px;
+    overflow: hidden;
+}
+.swBtn {
+    border: none;
+    outline: none;
+    background: rgba(0,0,0,.1);
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    color : white !important;
+}
+.swImg-arr {
+    height: 190px;
+    width: 500%;
+    position: relative;
+    right: 0;
+}
+.swImg-arr > a {
+    width: 20% !important;
+    height: 100%;
+    color: white !important;
+    display: inline-block;
+}
+.swImg {
+    position: relative;
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    top: 0;
+    background-image: url("img/test.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+    line-height: 190px;
+    text-align: center;
+}
+.author {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    z-index: 999999;
     text-align: center;
 }
 #pageNum {
@@ -414,6 +508,32 @@ footer {
     box-sizing: border-box;
     margin-bottom: 10px;
 }
+/*archive*/
+.vCard {
+    list-style: none !important;
+    padding: 1px 0;
+    margin-top: 20px;
+}
+.find-card-data {
+    list-style: none;
+}
+
+@media screen and (max-width: 1440px){
+    .control {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1240px){
+    .vBox {
+        width: 100%;
+    }
+    .pageTag {
+        width: 100%;
+    }
+    .nice {
+        width: 100%;
+    }
+}
 @media screen and (max-width: 600px){
     .pageTag {
         width: 100% !important;
@@ -470,15 +590,15 @@ footer {
         z-index: 99999;
         position: fixed;
         top: -250px;
-        background: white !important;
+        background-color: white !important;
+        padding: 0;
+        background: url("img/menuBottom-bg.png") no-repeat bottom / cover;
     }
     #controlBtn {
+        background-color: #E91E63;
         display: block !important;
     }
     /*  页面与header的交互 */
-    .pageBody,.blogBody {
-        margin-top: 70px;
-    }
 
     /* post评论表单 */
     .newBB > form {
@@ -516,4 +636,44 @@ footer {
         float: none;
         text-align: left;
     }
+    .loginBtn {
+        background: transparent;
+    }
+    .loginBtn > a {
+        color: rgba(0,0,0,.45) !important;
+    }
+}
+
+/* animate */
+.menuBackTop {
+     animation: menuBack 0.4s;
+     animation-fill-mode : forwards;
+ }
+@keyframes menuBack {
+    0% {transform: translate(0,250px)}
+    100% {transform: translate(0,0)}
+}
+.menuBackZero {
+    animation: menuZero 0.4s;
+    animation-fill-mode : forwards;
+}
+@keyframes menuZero {
+    0% {transform: translate(0,0)}
+    100% {transform: translate(0,250px)}
+}
+.controlBtnSS {
+     animation: cbss 0.45s;
+     animation-fill-mode : forwards;
+ }
+@keyframes cbss {
+    0% {transform: rotateY(0);background-color: #E91E63}
+    100% {transform: rotateY(180deg) ;background-color: transparent}
+}
+.controlBtnSB {
+    animation: cbsb 0.45s;
+    animation-fill-mode : forwards;
+}
+@keyframes cbsb {
+    0% {transform: rotateY(180deg) ;background-color: transparent}
+    100% {transform: rotateY(0);background-color: #E91E63}
 }
