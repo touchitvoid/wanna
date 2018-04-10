@@ -1,7 +1,7 @@
 # wanna
 半基于mdui的typecho主题
 终于算是能用了
-由于路径引用的问题目前需要放置字体和图标在/usr/themes目录下  [下载链接](http://icry.info/font.zip/)
+由于路径引用的问题目前需要放置字体和图标在/usr/themes目录下  [下载链接](http://icry.info/font.zip)
 
 [DEMO 主题展示](http://icry.info/)
 
