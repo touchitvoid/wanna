@@ -1,6 +1,6 @@
 <?php
 /**
- * 灰白，简约的色彩，以及线条
+ * 简单的线条及彩色
  *
  * @package snow
  * @author Void
@@ -24,7 +24,13 @@ $this->need('header.php');
                 <div class="pageTag shadow-5">
                     <div class="cardImage">
                         <a href="<?php $this->permalink() ?>">
-                        <div class="cardImage-img"></div>
+                            <?php if($this->options->slimg && 'guanbi'==$this->options->slimg): ?>
+                            <?php else: ?>
+                                <?php if($this->options->slimg && 'showoff'==$this->options->slimg): ?><a href="<?php $this->permalink() ?>" ><?php showThumbnail($this); ?></a>
+                                <?php else: ?>
+                                    <div class="cardImage-img" style="background-image: url('<?php showThumbnail($this); ?>')"></div>
+                                <?php endif; ?>
+                            <?php endif; ?>
 
                             <div class="readMore" mdui-tooltip="{content: '阅读全文'}">
                                 <div><i class="mdui-icon material-icons">keyboard_arrow_left</i></div>
@@ -54,7 +60,7 @@ $this->need('header.php');
                         </div>
                     </div>
                 </div>
-    <?php endwhile; ?><!--循环输出评论-->
+    <?php endwhile; ?><!--循环输出文章-->
         <div class="nav-position">
             <div class="nav">
                 <?php $this->pageNav('<i class="mdui-icon material-icons">keyboard_arrow_left</i>', '<i class="mdui-icon material-icons">&#xe315;</i>'); ?>
@@ -64,14 +70,18 @@ $this->need('header.php');
         <div class="right-pageTagMenu mdui-col-md-3 mdui-col-offset-md-1">
             <div class="vBox">
                 <div class="control shadow-2">
-                    <div class="mdui-textfield mdui-textfield-expandable">
-                        <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
-                        <input class="mdui-textfield-input" type="text" placeholder="搜索"/>
-                        <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+                    <div class="search">
+                        <div class="searchBtn justCenter">
+                            <i class="mdui-icon material-icons">search</i>
+                        </div>
+                        <div class="searchColor"></div>
+                        <form action="" method="post">
+                            <input type="text" name="s" placeholder="搜索内容" class="searchInput" autocomplete="off" />
+                        </form>
                     </div>
                     <div class="mdui-divider control-border"></div>
                     <div class="mdui-typo">
-                        <h4>Now!</h4>
+                        <h4>I'm crying</h4>
                         <div class="sortBy">
                             <div>
                                 <button class="mdui-btn mdui-ripple flexTag" value="0">最新回复</button>
@@ -85,7 +95,7 @@ $this->need('header.php');
                             </div>
                         </div>
                         <div class="colorBar"></div>
-                        <div class="mdui-typo">
+                        <div>
                             <div class="tabCard firstTabCard">
                                 <h5>最新回复</h5>
                                 <div class="boaCon marCenter">
@@ -98,108 +108,31 @@ $this->need('header.php');
                                 </div>
                             </div>
                             <div class="tabCard">
-                                <div class="page-tag-switch">
-                                    <button class="swBtn" id="pre-newPageBtn"><i class="mdui-icon material-icons">keyboard_arrow_left</i></button>
-                                    <button class="swBtn position-ab-right" id="next-newPageBtn"><i class="mdui-icon material-icons">keyboard_arrow_right</i></button>
-                                    <div class="swImg-arr">
-                                        <?php
-                                        $obj = $this->widget('Widget_Contents_Post_Recent');
-                                        if($obj->have()){
-                                            while($obj->next()){
-                                                echo "<a href=$obj->permalink><div class='swImg'>";
-                                                $obj->title();
-                                                echo '<div class="author">';
-                                                echo '作者 : ';$obj->author();
-                                                echo '</div>';
-                                                echo '</div></a>';
-                                            }
-                                        }else{
-                                            echo '无最新文章';
-                                        }
+                                <?php
+                                $recent = $this->widget('Widget_Contents_Post_Recent','pageSize=10');
+                                if($recent->have()):
+                                    while($recent->next()):
                                         ?>
+                                    <div class="nextNewPage">
+                                        <a href="<?php $recent->permalink(); ?>">
+                                            <div><?php $recent->title();?></div>
+                                        </a>
+                                        <span><?php $recent->date('Y/F/j') ?></span>
+                                        <span class="mdui-float-right nextNewPageData">
+                                            <i class="mdui-icon material-icons">check</i>
+                                            Com：<a><?php $recent->commentsNum('%d'); ?></a>
+                                        </span>
                                     </div>
-                                </div>
+                                    <?php endwhile; endif;?>
                             </div>
-                            <script>
-                                imgPos = 0;
-                                function getImgArrlength() {
-                                    imgs = $('.swImg').length;
-                                    if (imgs > 5){
-                                        imgs = 4;
-                                    }else if (imgs < 6){
-                                        imgs = imgs-1;
-                                    }
-                                    return imgs
-                                }
-                                function isStartEnd() {
-
-                                }
-                                for (var i = 0;i < getImgArrlength();i++){
-                                    var imgNum = Math.floor(Math.random()*5);
-                                    $('.swImg-arr').find('.swImg').eq(i).css({
-                                        backgroundImage : "url(/usr/themes/wanna/img/newPageimg"+imgNum+".jpg)"
-                                    })
-                                }
-                                $('#next-newPageBtn').click(function () {
-                                    if (imgPos >= 0 && imgPos < getImgArrlength()){
-                                        $('.swImg-arr').animate({
-                                            right : '+=100%'
-                                        });
-                                        imgPos = imgPos+1;
-                                    }else if (imgPos == 0){
-                                        mdui.snackbar({
-                                            message : '没有更早的了',
-                                            position : 'right-bottom'
-                                        })
-                                    }
-                                });
-                                $('#pre-newPageBtn').click(function () {
-                                    if (imgPos != 0 && imgPos > 0){
-                                        $('.swImg-arr').animate({
-                                            right : '-=100%'
-                                        });
-                                        imgPos = imgPos - 1;
-
-                                    }else if (imgPos == 0){
-                                        mdui.snackbar({
-                                            message : '没有更早的了',
-                                            position : 'right-bottom'
-                                        })
-                                    }
-                                });
-                                $('.swBtn').click(function () {
-                                    console.log('imgPos:'+imgPos+'imgs:'+imgs);
-                                })
-                            </script>
                             <div class="tabCard">
                                     <h5>文章分类</h5>
                                 <ul>
                                     <?php $this->widget('Widget_Metas_Category_List')
                                         ->parse('<li><a href="{permalink}">{name}</a> ({count})</li>'); ?>
                                 </ul>
-
                             </div>
                         </div>
-                        <script>
-                            $('.flexTag').click(function () {
-                                nowCard = $(this).val();
-                                $('.cat').remove();
-                                $(this).after('<div class="cat"></div>');
-                                $('.cat').animate({
-                                    top : '0',
-                                    opacity : '1'
-                                });
-                                allHidden();
-                                $('.tabCard').eq(nowCard).css({
-                                    display : 'block'
-                                })
-                            });
-                            function allHidden() {
-                                $('.tabCard').css({
-                                    display : 'none'
-                                })
-                            }
-                        </script>
                     </div>
                 </div>
             </div>
