@@ -7,14 +7,14 @@
         <h3><?php $this->title() ?></h3>
         <div class="taptap">
             <div>
-                <span><i class="mdui-icon material-icons">check</i>View：<a><?php $this->commentsNum('%d  条评论'); ?></a></span>
+                <span><i class="mdui-icon material-icons">check</i>Comments：<a><?php $this->commentsNum('%d  条评论'); ?></a></span>
                 <span><i class="mdui-icon material-icons">change_history</i>Tags：<?php $this->category(','); ?></span>
             </div>
             <div class="pageDataRight">
                 <span>
                     作者 : <a><?php $this->author() ?></a></span>
                 <span>
-                    <i class="mdui-icon material-icons">date_range</i>日期 : <?php $this->date('F j, Y'); ?></span>
+                    <i class="mdui-icon material-icons">date_range</i>日期 : <?php $this->date('Y / F j'); ?></span>
             </div>
 
         </div>

@@ -330,7 +330,8 @@ header {
 }
 
 .control-border {
-    margin: 8px 0 !important;
+    width: 80%;
+    margin: 8px auto !important;
 }
 .sortBy {
     display: flex;
@@ -361,6 +362,7 @@ header {
     /* 神奇的操作 */
 }
 .tabCard {
+    margin-top: 24px;
     display: none;
 }
 .firstTabCard {
@@ -532,6 +534,7 @@ footer {
     outline: none;
     background-color: #8ec5fc;
     border-radius: 3px;
+    box-shadow: 0 0 3px rgba(0,0,0,.15);
 }
 
 
@@ -632,6 +635,7 @@ footer {
         padding-right: 0 !important;
     }
     .control {
+        min-height: 380px;
         border-radius: 0 !important;
         opacity: 1 !important;
     }

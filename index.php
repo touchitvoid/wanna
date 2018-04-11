@@ -44,7 +44,7 @@ $this->need('header.php');
                             <h4><?php $this->title() ?></h4>
                             <div style="margin-bottom: 10px">
                                 作者：<a><?php $this->author(); ?></a>&nbsp
-                                时间：<a><?php $this->date('F j, Y'); ?></a>&nbsp
+                                时间：<a><?php $this->date('Y / F j'); ?></a>&nbsp
                                 标签：<a><?php $this->category(','); ?></a>
                             </div>
                             <p style="font-size: 0.92em"><?php $this->excerpt(50,'...'); ?></p>
@@ -52,7 +52,7 @@ $this->need('header.php');
                         <div class="ovo">
                             <div class="ovo-icon">
                                 <div class="dataIcon mdui-ripple">
-                                    <i class="mdui-icon material-icons">check</i>
+                                    <i class="mdui-icon material-icons">bubble_chart</i>
                                     <span style="margin: 0 3px">:</span>
                                     <span><?php $this->commentsNum('%d'); ?></span>
                                 </div>
@@ -79,9 +79,9 @@ $this->need('header.php');
                             <input type="text" name="s" placeholder="搜索内容" class="searchInput" autocomplete="off" />
                         </form>
                     </div>
-                    <div class="mdui-divider control-border"></div>
+                    <div class="mdui-divider control-border" style="margin-bottom: 30px !important;"></div>
                     <div class="mdui-typo">
-                        <h4>I'm crying</h4>
+
                         <div class="sortBy">
                             <div>
                                 <button class="mdui-btn mdui-ripple flexTag" value="0">最新回复</button>
@@ -97,7 +97,6 @@ $this->need('header.php');
                         <div class="colorBar"></div>
                         <div>
                             <div class="tabCard firstTabCard">
-                                <h5>最新回复</h5>
                                 <div class="boaCon marCenter">
                                     <ul>
                                         <?php $this->widget('Widget_Comments_Recent')->to($comments); ?>
@@ -117,7 +116,7 @@ $this->need('header.php');
                                         <a href="<?php $recent->permalink(); ?>">
                                             <div><?php $recent->title();?></div>
                                         </a>
-                                        <span><?php $recent->date('Y/F/j') ?></span>
+                                        <span><?php $recent->date('Y / F j'); ?></span>
                                         <span class="mdui-float-right nextNewPageData">
                                             <i class="mdui-icon material-icons">check</i>
                                             Com：<a><?php $recent->commentsNum('%d'); ?></a>
@@ -126,7 +125,6 @@ $this->need('header.php');
                                     <?php endwhile; endif;?>
                             </div>
                             <div class="tabCard">
-                                    <h5>文章分类</h5>
                                 <ul>
                                     <?php $this->widget('Widget_Metas_Category_List')
                                         ->parse('<li><a href="{permalink}">{name}</a> ({count})</li>'); ?>

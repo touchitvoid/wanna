@@ -27,7 +27,7 @@
                             <textarea name="text" id="textarea" class="textarea" placeholder="评论内容" required ><?php $this->remember('text'); ?></textarea>
                         </div>
                         <div class="mdui-col-xs-12 mdui-col-md-2" id="subBtn">
-                            <button class="mdui-ripple shadow-1" type="submit">提交评论</button>
+                            <button class="mdui-ripple" type="submit">提交评论</button>
                         </div>
                     </form>
                  <?php else: ?>
