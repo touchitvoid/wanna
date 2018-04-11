@@ -34,7 +34,7 @@ function themeFields($layout) {
 function showThumbnail($widget)
 {
     // 当文章无图片时的默认缩略图
-    $dir = './usr/themes/yodu/img/sj/';//随机缩略图目录
+    $dir = './usr/themes/wanna/img/random/';//随机缩略图目录
     $n= sizeof(scandir($dir))-2;
     if($n <= 0){
         $n=5;
@@ -76,7 +76,7 @@ function showThumbnail($widget)
             if ($widget->tags) {
                 foreach ($widget->tags as $tag) {
 
-                    $ctu = './usr/themes/yodu/img/tag/' . $tag['slug'] . '.jpg';
+                    $ctu = './usr/themes/wanna/img/tag/' . $tag['slug'] . '.jpg';
 
                     if(is_file($ctu))
                     {
