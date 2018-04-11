@@ -43,7 +43,7 @@
                             <div class="userIcon">
                                 <div class="userName">
                                     <div class="name"><?php $comments->author(); ?></div>
-                                    <div class="Jurisdiction"><?php $comments->date('Y ,F jS'); ?>&nbsp<?php $comments->date('h:i'); ?></div>
+                                    <div class="Jurisdiction"><?php $comments->date('Y/F j'); ?>&nbsp<?php $comments->date('h:i'); ?></div>
                                 </div>
                             </div>
                         </div>
