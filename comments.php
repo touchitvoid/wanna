@@ -41,6 +41,7 @@
                         <div class="colorBar"></div>
                         <div class="userData" id="<?php $comments->responseId(); ?>">
                             <div class="userIcon">
+                                <?php echo $this->author->gravatar(100);?>
                                 <div class="userName">
                                     <div class="name"><?php $comments->author(); ?></div>
                                     <div class="Jurisdiction"><?php $comments->date('Y/F j'); ?>&nbsp<?php $comments->date('h:i'); ?></div>
