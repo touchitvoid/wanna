@@ -467,6 +467,10 @@ footer {
 .pageContent {
     padding: 0 35px;
 }
+.pageContent > p > img {
+    max-width: 30em;
+    margin: 0 auto;
+}
 .sibi {
     margin: 20px 0;
     min-height: 200px;
@@ -716,6 +720,9 @@ footer {
 
     .comments {
         padding: 0 12px;
+    }
+    .pageContent > p > img {
+        max-width: 100%;
     }
 }
 

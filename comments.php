@@ -37,9 +37,9 @@
         </div>
             <div class="comments">
                 <?php while($comments->next()): ?>
-                    <div class="userBB mdui-col-md-12 shadow-1">
+                    <div class="userBB mdui-col-md-12 shadow-1 " id="<?php $comments->theId(); ?>">
                         <div class="colorBar"></div>
-                        <div class="userData" id="<?php $comments->responseId(); ?>">
+                        <div class="userData"">
                             <div class="userIcon">
                                 <?php echo $this->author->gravatar(100);?>
                                 <div class="userName">
