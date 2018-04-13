@@ -66,8 +66,8 @@ $this->need('header.php');
                 <?php $this->pageNav('<i class="mdui-icon material-icons">keyboard_arrow_left</i>', '<i class="mdui-icon material-icons">&#xe315;</i>'); ?>
             </div>
         </div>
-            </div>
-        <div class="right-pageTagMenu mdui-col-md-3 mdui-col-offset-md-1">
+    </div>
+        <div class="right-pageTagMenu mdui-col-md-3">
             <div class="vBox">
                 <div class="control shadow-2">
                     <div class="search">
@@ -136,6 +136,7 @@ $this->need('header.php');
             </div>
         </div>
     </div>
+
     <script>
         foo = false;
         $(window).scroll(function () {
@@ -163,5 +164,16 @@ $this->need('header.php');
             }
         })
     </script>
+    <div class="vMenu">
+        <div class="v-menu-assembly-1">
+            <div class="Blog-logo">
+                <div class="iam-img"></div>
+                <div class="iam-t">
+                   Void
+                </div>
+            </div>
+        </div>
+        <div class="v-menu-assembly-2"></div>
+    </div>
 <?php $this->need('sidebar.php'); ?>
 <?php $this->need('footer.php'); ?>

@@ -39,7 +39,7 @@ body {
 }
 /* header */
 header {
-    width: 100%;
+    width: 90%;
     position: fixed;
     top: 0;
     min-height: 50px;
@@ -82,7 +82,7 @@ header {
     margin: 0 auto;
     padding: 10px;
     box-sizing: border-box;
-    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    background: linear-gradient(to right,lightblue,pink);
     color: white;
     display: flex;
     text-align: center;
@@ -99,6 +99,7 @@ header {
     min-height: 200px;
     padding-bottom: 30px;
     box-sizing: border-box;
+    position: relative;
 }
 .bg-ovo {
     width: 100%;
@@ -268,7 +269,6 @@ header {
     border-radius: 5px;
     width: 90%;
     min-height: 500px;
-    margin: 0 auto;
     margin-top: 30px;
     padding: 20px 18px;
     box-sizing: border-box;
@@ -604,7 +604,7 @@ footer {
     list-style: none;
 }
 
-@media screen and (max-width: 1440px){
+@media screen and (max-width: 1550px){
     .control {
         width: 100%;
     }
@@ -782,4 +782,47 @@ footer {
     padding-top: 8px !important;
     margin: 0 auto;
     box-sizing: border-box;
+}
+
+
+/* 0.1后新增样式 */
+.vMenu {
+    width: 10%;
+    height: 100%;
+    box-shadow: 0 0 3px rgba(0,0,0,.15);
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+.v-menu-assembly-1 {
+    width: 100%;
+    height: 20%;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    position: relative;
+}
+.Blog-logo {
+    width: 82%;
+    min-height: 160px;
+    position: absolute;
+    bottom: -190px;
+    left: 9%;
+}
+.iam-img {
+    width: 100%;
+    background: url('img/icon.jpg') no-repeat center / cover;
+    height: 160px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,.1);
+}
+.iam-t {
+    width: 100%;
+    min-height: 100px;
+    box-sizing: border-box;
+    padding: 8px;
+    color: gray;
+}
+.v-menu-assembly-2 {
+    width: 100%;
+    height: 80%;
+    background: white;
 }
