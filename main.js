@@ -5,12 +5,12 @@ window.onload = function () {
         if (switchNow == 0){
             animateFor('header','menuBackTop','menuBackZero');
             animateFor('#controlBtn','controlBtnSB','controlBtnSS');
-            $(this).find('i').text('close');
+            $(this).find('i').text('close').css({color: 'rgba(0,0,0,.45)'});
             switchNow = 1;
         }else {
             animateFor('header','menuBackZero','menuBackTop');
             animateFor('#controlBtn','controlBtnSS','controlBtnSB');
-            $(this).find('i').text('menu');
+            $(this).find('i').text('menu').css({color: 'white'});
             switchNow = 0;
         }
     });
@@ -39,6 +39,7 @@ window.onload = function () {
                     searBtn.find('i').text('close');
                 });
                 searBtn.animate({opacity:'1'},200);
+                $('.searchInput').attr('disabled',false);
             });
             switchNow = 1;
         }else {
@@ -48,6 +49,7 @@ window.onload = function () {
                     searBtn.find('i').text('search');
                 });
                 searBtn.animate({opacity:'1'},200);
+                $('.searchInput').attr('disabled',true);
             });
             switchNow = 0;
         }

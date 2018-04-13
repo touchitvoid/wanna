@@ -76,7 +76,7 @@ $this->need('header.php');
                         </div>
                         <div class="searchColor"></div>
                         <form action="" method="post">
-                            <input type="text" name="s" placeholder="搜索内容" class="searchInput" autocomplete="off" />
+                            <input type="text" name="s" placeholder="搜索内容" class="searchInput" autocomplete="off" disabled="disabled" />
                         </form>
                     </div>
                     <div class="mdui-divider control-border" style="margin-bottom: 30px !important;"></div>

@@ -23,12 +23,12 @@
     </ul>
     <ul class="header-tab-1 header-tab-2" >
         <?php if($this->user->hasLogin()): ?>
-                    <li><a href="<?php $this->options->adminUrl(); ?>">欢迎回来 <?php $this->user->screenName(); ?></a><a href="<?php $this->options->logoutUrl(); ?>" id="loginOutUrl" mdui-tooltip="{content: '退出登陆'}">login out<i class="mdui-icon material-icons">chevron_right</i></a></li>
+                    <li><a href="<?php $this->options->adminUrl(); ?>">欢迎回来 <?php $this->user->screenName(); ?></a></li>
         <?php else: ?>
             <li class="loginBtn"><a href="<?php $this->options->adminUrl(); ?>">Login<i class="mdui-icon material-icons">expand_more</i></a></li>
         <?php endif; ?>
                     <li class="mdui-ripple" id="controlBtn">
-                        <a href="#"><i class="material-icons mdui-icon" style="color: white">menu</i></a>
+                        <a href="#"><i class="material-icons mdui-icon">menu</i></a>
                     </li>
     </ul>
 </header>
