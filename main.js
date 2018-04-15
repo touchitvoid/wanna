@@ -53,9 +53,29 @@ window.onload = function () {
             });
             switchNow = 0;
         }
+    });
+    vMenu = 0;
+    $('.vMenu-onBtn').click(function () {
+        if (vMenu == 0){
+            an_Move('vMenu','140px','0','400ms');
+            an_Move('header','140px','0','600ms');
+            an_Move('smallMenu','50px','0','350ms');
+            $('header').animate({
+                paddingLeft : '80px'
+            },function () {
+                vMenu = 1;
+            })
+        }else if (vMenu == 1){
+            an_Move('vMenu','0','0','400ms');
+            an_Move('header','0','0','600ms');
+            an_Move('smallMenu','0','0','350ms');
+            $('header').animate({
+                paddingLeft : '220px'
+            },function () {
+                vMenu = 0;
+            })
+        }
     })
-
-
 
 };
 function allHidden() {
@@ -66,4 +86,14 @@ function allHidden() {
 function animateFor(event,r,a) {
     $(event).removeClass(r);
     $(event).addClass(a);
-} /* 通过添加类名来添加动画，css动画是真滴舒服 */
+} /* 通过添加类名来添加动画*/
+function an_Move(obj,x,y,ms) {
+    var e = document.getElementById(obj);
+    e.style.transition="-webkit-transform "+ms+" ease-out";
+    e.style.webkitTransform="translate("+x+","+y+") scale(1)";
+}
+function an_rotate(obj,xy,data,ms) {
+    var e = document.getElementById(obj);
+    e.style.transition="-webkit-transform "+ms+" ease-out";
+    e.style.webkitTransform="rotate"+xy+"("+data+"deg) scale(1)";
+}

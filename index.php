@@ -14,12 +14,6 @@ $this->need('header.php');
     <div class="mdui-container-fluid blogBody">
         <div class="bg-ovo"></div>
     <div class="left-page-list mdui-col-md-8">
-        <div class="nice">
-            <div class="mdui-typo">
-                <h4><?php $this->options->title() ?></h4>
-                <p><?php $this->options->description() ?></p>
-            </div>
-        </div>
     <?php while($this->next()): ?>
                 <div class="pageTag shadow-5">
                     <div class="cardImage">
@@ -164,16 +158,5 @@ $this->need('header.php');
             }
         })
     </script>
-    <div class="vMenu">
-        <div class="v-menu-assembly-1">
-            <div class="Blog-logo">
-                <div class="iam-img"></div>
-                <div class="iam-t">
-                   Void
-                </div>
-            </div>
-        </div>
-        <div class="v-menu-assembly-2"></div>
-    </div>
 <?php $this->need('sidebar.php'); ?>
 <?php $this->need('footer.php'); ?>

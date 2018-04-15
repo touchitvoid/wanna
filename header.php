@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<header>
+<header id="header">
     <ul class="header-tab-1">
          <li class="mdui-ripple"><a href="<?php $this->options->siteUrl(); ?>">主页</a></li>
          <li class="mdui-ripple"><a>留言</a></li>
