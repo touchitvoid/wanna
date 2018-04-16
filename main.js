@@ -1,16 +1,19 @@
 window.onload = function () {
 
     switchNow = 0;
-    $('#controlBtn').click(function () {
+    var mh = $('.mobie-head');
+    $('#open-hMenu').click(function () {
         if (switchNow == 0){
             animateFor('header','menuBackTop','menuBackZero');
             animateFor('#controlBtn','controlBtnSB','controlBtnSS');
-            $(this).find('i').text('close').css({color: 'rgba(0,0,0,.45)'});
+            $('#controlBtn').find('i').eq(1).text('close').css({color: 'rgba(0,0,0,.45)'});
+            mh.css({display: 'none'});
             switchNow = 1;
         }else {
             animateFor('header','menuBackZero','menuBackTop');
             animateFor('#controlBtn','controlBtnSS','controlBtnSB');
-            $(this).find('i').text('menu').css({color: 'white'});
+            $('#controlBtn').find('i').eq(1).text('menu').css({color: 'white'});
+            mh.css({display: 'block'});
             switchNow = 0;
         }
     });
@@ -75,8 +78,24 @@ window.onload = function () {
                 vMenu = 0;
             })
         }
-    })
-
+    });
+  vMenu_M = 0;
+    $('#open-Vmenu').click(function () {
+        var h = screen.height;
+        if (vMenu_M == 0){
+                an_Move('body','-190px','0','350ms');
+            an_Move('vMenu','-190px','0','350ms');
+            an_Move('header','-190px','0','350ms');
+            $('#open-hMenu').attr('disabled',true);
+                vMenu_M = 1;
+        }else if (vMenu_M == 1) {
+                an_Move('body','0','0','350ms');
+            an_Move('vMenu','0','0','350ms');
+            an_Move('header','0','0','350ms');
+            $('#open-hMenu').attr('disabled',false);
+                vMenu_M = 0;
+        }
+    });
 };
 function allHidden() {
     $('.tabCard').css({
@@ -96,4 +115,7 @@ function an_rotate(obj,xy,data,ms) {
     var e = document.getElementById(obj);
     e.style.transition="-webkit-transform "+ms+" ease-out";
     e.style.webkitTransform="rotate"+xy+"("+data+"deg) scale(1)";
+}
+function clearAn(event) {
+    $(event).removeAttr('style');
 }

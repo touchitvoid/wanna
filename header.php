@@ -13,7 +13,6 @@
     <?php $this->header(); ?>
 </head>
 <body>
-
 <header id="header">
     <ul class="header-tab-1">
          <li class="mdui-ripple"><a href="<?php $this->options->siteUrl(); ?>">主页</a></li>
@@ -27,8 +26,15 @@
         <?php else: ?>
             <li class="loginBtn"><a href="<?php $this->options->adminUrl(); ?>">Login<i class="mdui-icon material-icons">expand_more</i></a></li>
         <?php endif; ?>
+                    <li class="mobie-head"><?php $this->options->title() ?></li>
                     <li class="mdui-ripple" id="controlBtn">
-                        <a href="#"><i class="material-icons mdui-icon">menu</i></a>
+                        <button class="mb-btn mdui-ripple" id="open-Vmenu">
+                            <i class="material-icons mdui-icon">details</i>
+                        </button>
+                        <button class="mb-btn mdui-ripple" id="open-hMenu">
+                            <i class="mdui-icon material-icons">menu</i>
+                        </button>
                     </li>
     </ul>
 </header>
+<div id="body">

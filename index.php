@@ -158,5 +158,4 @@ $this->need('header.php');
             }
         })
     </script>
-<?php $this->need('sidebar.php'); ?>
 <?php $this->need('footer.php'); ?>

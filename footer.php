@@ -5,5 +5,7 @@
 </footer><!-- end #footer -->
 
 <?php $this->footer(); ?>
-</body>
+</div>
+<?php $this->need('sidebar.php'); ?>
+    </body>
 </html>
