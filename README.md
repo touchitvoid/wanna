@@ -11,4 +11,4 @@
 - 添加Pjax分页
 - ajax无缝评论
 - 当页阅读文章
-<img src='http://img.hb.aicdn.com/57cd0fce14b991d135c549ae94c6c2ebafb76a871316f-y4AQ9T_fw658' width='300px'/>
+<img src='http://icry.info/usr/uploads/2018/04/1032564841.png' width='300px'/>
