@@ -28,7 +28,7 @@
         <?php endif; ?>
                     <li class="mobie-head"><?php $this->options->title() ?></li>
                     <li class="mdui-ripple" id="controlBtn">
-                        <button class="mb-btn mdui-ripple" id="open-Vmenu">
+                        <button class="mb-btn" id="open-Vmenu">
                             <i class="material-icons mdui-icon">details</i>
                         </button>
                         <button class="mb-btn mdui-ripple" id="open-hMenu">

@@ -174,7 +174,7 @@ header {
     width: 100%;
     height: 100%;
     color: grey;
-    z-index: 999;
+    z-index: 98;
 }
 .sqReadMore {
    background: white;
@@ -790,6 +790,16 @@ footer {
     padding: 0 16px;
 }
 
+.shading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgba(0,0,0,.1);
+    z-index: 99;
+}
+
 @media screen and (max-width: 600px){
     .pageTag {
         width: 100% !important;
@@ -855,6 +865,8 @@ footer {
         background-image: linear-gradient(120deg, #a1c4fd 100%, #c2e9fb 0%);
        display: block;
         padding: 0 12px;
+        position: relative;
+        z-index: auto;
     }
     .mb-btn {width: 40px;
         height: 50px;
@@ -913,6 +925,9 @@ footer {
     .mobie-head {
         display: block;
     }
+    #open-Vmenu {
+        z-index: 99999;
+    }
     .vMenu {
         z-index: 1000;
         right: -190px;
@@ -928,9 +943,4 @@ footer {
     #body {
         padding-top: 80px;
     }
-}
-
-.noAN {
-    transform: none !important;
-    transition: none !important;
 }

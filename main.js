@@ -85,15 +85,18 @@ window.onload = function () {
         if (vMenu_M == 0){
                 an_Move('body','-190px','0','350ms');
             an_Move('vMenu','-190px','0','350ms');
-            an_Move('header','-190px','0','350ms');
+            $('body').after("<div class='shading'></div>");
             $('#open-hMenu').attr('disabled',true);
                 vMenu_M = 1;
-        }else if (vMenu_M == 1) {
-                an_Move('body','0','0','350ms');
-            an_Move('vMenu','0','0','350ms');
-            an_Move('header','0','0','350ms');
-            $('#open-hMenu').attr('disabled',false);
-                vMenu_M = 0;
+                if (vMenu_M == 1){
+                    $('.shading').click(function () {
+                        an_Move('body','0','0','350ms');
+                        an_Move('vMenu','0','0','350ms');
+                        $('#open-hMenu').attr('disabled',false);
+                        $('.shading').remove();
+                        vMenu_M = 0;
+                    });
+                }
         }
     });
 };
