@@ -374,7 +374,7 @@ header {
 }
 .boaCon {
     width: 100%;
-    max-height: 185Px;
+    min-height: 185Px;
     letter-spacing: 1px;
 }
 .boaCon > ul {
