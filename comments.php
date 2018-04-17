@@ -37,7 +37,7 @@
         </div>
             <div class="comments">
                 <?php while($comments->next()): ?>
-                    <div class="userBB mdui-col-md-12 shadow-1 " id="<?php $comments->theId(); ?>">
+                    <div class="userBB mdui-col-md-10 shadow-1 " id="<?php $comments->theId(); ?>">
                         <div class="colorBar"></div>
                         <div class="userData"">
                             <div class="userIcon">
@@ -51,7 +51,14 @@
                         <div class="userBB-Content">
                             <?php $comments->content(); ?>
                         </div>
+                <div class="replayLine">
+                    <button class="replayBtn btnclearDcss borR5px">回复</button>
+                </div>
                     </div>
                 <?php endwhile; ?>
             </div>
+<div class="nextPrev shadow-1">
+    <div><i class="mdui-icon material-icons">chevron_left</i><?php $this->theNext('%s','哇 没了'); ?></div>
+    <div><?php $this->thePrev('%s','哇 没了'); ?><i class="mdui-icon material-icons">chevron_right</i></div>
+</div>
     </div>

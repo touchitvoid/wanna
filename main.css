@@ -34,6 +34,12 @@ h1,h2,h3,h4,h5,h6 {
     align-items: center;
     justify-content: center;
 }
+.btnclearDcss {
+    outline: none;
+    background: transparent;
+    border: none;
+}
+
 body {
     padding-top: 80px;
 }
@@ -477,9 +483,10 @@ footer {
     min-height: 200px;
     padding: 12px;
     box-sizing: border-box;
-    padding-bottom: 70px;
+    padding-bottom: 120px;
     background: white;
     color: gray;
+    position: relative;
 }
 .userIC {
     width: 100%;
@@ -553,8 +560,60 @@ footer {
     position: relative;
     top: 24px;
 }
+.replayBtn {
+    color: white;
+    letter-spacing: 1px;
+    background: #8ec5fc;
+    padding: 4px 30px;
+}
+.replayLine {
+    width: 100%;
+    text-align: right;
+    height: 36px;
+    box-sizing: border-box;
+    padding: 0 6px;
+}
+.nextPrev {
+    position: absolute;
+    right:12px;
+    bottom: 12px;
+    height: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+}
+.nextPrev > div {
+    min-width: 100px;
+    text-align: center;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+}.nextPrev > div:first-child:after {
+    content: '';
+    height: 12px;
+    width: 3px;
+    background: pink;
+    position: relative;
+     left:10px;
+ }
+.nextPrev > div > i {
+    font-size: 22px;
+    margin: 0 12px;
+}
+.nextPrev > div > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: gray;
+}
 .userBB {
+    width: 100%;
     margin-top: 16px;
+    border-radius: 3px;
+    position: relative;
 }
 .userData {
     position: relative;
@@ -593,7 +652,6 @@ footer {
     min-height: 70px;
     padding: 10px 12px;
     box-sizing: border-box;
-    margin-bottom: 10px;
 }
 /*archive*/
 .vCard {
@@ -941,6 +999,6 @@ footer {
         padding-top: 0;
     }
     #body {
-        padding-top: 80px;
+        padding-top: 50px;
     }
 }

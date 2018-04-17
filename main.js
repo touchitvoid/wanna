@@ -8,12 +8,14 @@ window.onload = function () {
             animateFor('#controlBtn','controlBtnSB','controlBtnSS');
             $('#controlBtn').find('i').eq(1).text('close').css({color: 'rgba(0,0,0,.45)'});
             mh.css({display: 'none'});
+            $('#open-Vmenu').attr('disabled',true);
             switchNow = 1;
         }else {
             animateFor('header','menuBackZero','menuBackTop');
             animateFor('#controlBtn','controlBtnSS','controlBtnSB');
             $('#controlBtn').find('i').eq(1).text('menu').css({color: 'white'});
             mh.css({display: 'block'});
+            $('#open-Vmenu').attr('disabled',false);
             switchNow = 0;
         }
     });
@@ -86,19 +88,19 @@ window.onload = function () {
                 an_Move('body','-190px','0','350ms');
             an_Move('vMenu','-190px','0','350ms');
             $('body').after("<div class='shading'></div>");
-            $('#open-hMenu').attr('disabled',true);
                 vMenu_M = 1;
                 if (vMenu_M == 1){
                     $('.shading').click(function () {
                         an_Move('body','0','0','350ms');
                         an_Move('vMenu','0','0','350ms');
-                        $('#open-hMenu').attr('disabled',false);
                         $('.shading').remove();
                         vMenu_M = 0;
                     });
                 }
         }
     });
+
+    $('.userBB:odd').addClass('mdui-col-offset-md-1');
 };
 function allHidden() {
     $('.tabCard').css({
