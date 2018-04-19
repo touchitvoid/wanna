@@ -39,7 +39,7 @@
                 <?php while($comments->next()): ?>
                     <div class="userBB mdui-col-md-10 shadow-1 " id="<?php $comments->theId(); ?>">
                         <div class="colorBar"></div>
-                        <div class="userData"">
+                        <div class="userData">
                             <div class="userIcon">
                                 <?php echo $this->author->gravatar(100);?>
                                 <div class="userName">
@@ -59,6 +59,7 @@
             </div>
 <div class="nextPrev shadow-1">
     <div><i class="mdui-icon material-icons">chevron_left</i><?php $this->theNext('%s','哇 没了'); ?></div>
+    <span id='theFlexBor'></span>
     <div><?php $this->thePrev('%s','哇 没了'); ?><i class="mdui-icon material-icons">chevron_right</i></div>
 </div>
     </div>

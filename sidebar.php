@@ -28,10 +28,10 @@
     </div>
     <div class="v-menu-assembly-2">
         <ul class="vMenu-item-list">
-            <li class="mdui-ripple">归档</li>
-            <li class="mdui-ripple">工具</li>
-            <li class="mdui-ripple">导航</li>
-            <li class="mdui-ripple">Github</li>
+           <a href="<?php $this->options->siteUrl(); ?>index.php/pagefile.html"><li class="mdui-ripple">归档</li></a>
+            <a href="#"><li class="mdui-ripple">工具</li></a>
+            <a href="#"> <li class="mdui-ripple">导航</li></a>
+            <a href="https://github.com/touchitvoid"><li class="mdui-ripple">Github</li></a>
         </ul>
     </div>
 </div>

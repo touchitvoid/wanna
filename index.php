@@ -4,7 +4,7 @@
  *
  * @package snow
  * @author Void
- * @version 0.1
+ * @version 1.0
  * @link http://typecho.org
  */
 
@@ -138,9 +138,9 @@ $this->need('header.php');
             var sSs = window.innerHeight;
             var ssr = sS+sSs;
             var sH = document.documentElement.scrollHeight;
-            console.log(sS+' '+sSs+'>>'+sH);
+            /*console.log(sS+' '+sSs+'>>'+sH);
             console.log(ssr);
-            console.log('foo :'+foo);
+            console.log('foo :'+foo);*/
             if (ssr === sH && foo == false){
                 $('footer').stop(true,false).animate({
                     opacity : '1',
