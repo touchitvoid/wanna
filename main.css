@@ -865,7 +865,37 @@ footer {
     z-index: 99;
 }
 
+/* pagefile */
+.pagefile-body {
+    color: rgba(0,0,0,.45);
+}
+.pagefile-body li {
+    list-style: none;
+}
+.pf_post_list > li {
+    width: 200px;
+    min-width: 450px;
+    height: 52px;
+    box-sizing: border-box;
+    padding: 12px 24px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    background: white;
+    position: relative;
+    margin: 16px 0;
+    list-style: none;
+}
+
 @media screen and (max-width: 600px){
+    .archives ul {
+        padding-left: 0 !important;
+    }
+    .pf_post_list > li {
+        min-width: 95%;
+        height: 45px;
+    }
+
     .pageTag {
         width: 100% !important;
     }
@@ -1012,27 +1042,3 @@ footer {
         max-width: 90%;
     }
 }
-
-
-/* pagefile */
-.pagefile-body {
-    color: rgba(0,0,0,.45);
-}
-.pagefile-body li {
-    list-style: none;
-}
-.pf_post_list > li {
-    width: 200px;
-    min-width: 450px;
-    height: 52px;
-    box-sizing: border-box;
-    padding: 12px 24px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    background: white;
-    position: relative;
-    margin: 16px 0;
-    list-style: none;
-}
-
