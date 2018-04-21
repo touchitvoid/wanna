@@ -62,6 +62,7 @@ window.onload = function () {
     vMenu = 0;
     $('.vMenu-onBtn').click(function () {
         if (vMenu == 0){
+            an_rotate('vMenu-onbtn','','180','400ms');
             an_Move('vMenu','140px','0','400ms');
             an_Move('header','140px','0','600ms');
             an_Move('smallMenu','50px','0','350ms');
@@ -69,8 +70,12 @@ window.onload = function () {
                 paddingLeft : '80px'
             },function () {
                 vMenu = 1;
+            });
+            $('.blogBody-pos').animate({
+                left : '5%'
             })
         }else if (vMenu == 1){
+            an_rotate('vMenu-onbtn','','0','400ms');
             an_Move('vMenu','0','0','400ms');
             an_Move('header','0','0','600ms');
             an_Move('smallMenu','0','0','350ms');
@@ -78,6 +83,9 @@ window.onload = function () {
                 paddingLeft : '220px'
             },function () {
                 vMenu = 0;
+            });
+            $('.blogBody-pos').animate({
+                left : '0'
             })
         }
     });

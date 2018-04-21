@@ -41,7 +41,7 @@
                         <div class="colorBar"></div>
                         <div class="userData">
                             <div class="userIcon">
-                                <?php echo $this->author->gravatar(100);?>
+                                <?php echo $this->author->gravatar(90);?>
                                 <div class="userName">
                                     <div class="name"><?php $comments->author(); ?></div>
                                     <div class="Jurisdiction"><?php $comments->date('Y/F j'); ?>&nbsp<?php $comments->date('h:i'); ?></div>
@@ -57,7 +57,7 @@
                     </div>
                 <?php endwhile; ?>
             </div>
-<div class="nextPrev shadow-1">
+<div class="nextPrev">
     <div><i class="mdui-icon material-icons">chevron_left</i><?php $this->theNext('%s','哇 没了'); ?></div>
     <span id='theFlexBor'></span>
     <div><?php $this->thePrev('%s','哇 没了'); ?><i class="mdui-icon material-icons">chevron_right</i></div>

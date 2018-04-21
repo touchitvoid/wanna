@@ -6,7 +6,6 @@
  *
  */
     $this->need('header.php');
-    $this->need('sidebar.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +14,6 @@
     <title>pageFile</title>
 </head>
 <body>
-<div class="bg-ovo"></div>
     <div class="mdui-container mdui-typo pagefile-body">
         <?php $this->widget('Widget_Contents_Post_Recent', 'pageSize=10000')->to($archives);
         $year=0; $mon=0; $i=0; $j=0;
@@ -49,5 +47,6 @@
             right : '-20px'
         })
     </script>
+    <?php $this->need('footer.php'); ?>
 </body>
 </html>

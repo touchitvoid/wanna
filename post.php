@@ -2,12 +2,11 @@
 <?php $this->need('header.php'); ?>
 
 <div class="mdui-container pageBody shadow-2">
-    <div class="bg-ovo"></div>
     <div class="mdui-typo pageHead">
         <h3><?php $this->title() ?></h3>
         <div class="taptap">
             <div>
-                <span><i class="mdui-icon material-icons">check</i>Comments：<a><?php $this->commentsNum('%d  条评论'); ?></a></span>
+                <span><i class="mdui-icon material-icons">check</i>评论：<a><?php $this->commentsNum('%d  条'); ?></a></span>
                 <span><i class="mdui-icon material-icons">change_history</i>Tags：<?php $this->category(','); ?></span>
             </div>
             <div class="pageDataRight">

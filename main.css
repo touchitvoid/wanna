@@ -60,6 +60,9 @@ header {
     padding-left: 220px;
     z-index: 99;
 }
+.right-pageTagMenu {
+    margin-left: 3%;
+}
 #controlBtn {
     width: 100%;
     height: 50px;
@@ -87,23 +90,14 @@ header {
     margin: 0;
     float: right;
 }
-/* blogBody */
-/*.nice {
-    width: 90%;
-    min-height: 100px;
-    margin: 0 auto;
-    padding: 10px;
-    box-sizing: border-box;
-    background: linear-gradient(to right,lightblue,pink);
-    color: white;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}*/
 .blogBody {
     color: gray;
     margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+}
+.blogBody-pos {
+    position: relative;
 }
 .vBox {
     width: 90%;
@@ -624,12 +618,12 @@ footer {
 }
 .userData {
     position: relative;
-    padding: 5px 20px;
+    padding: 3px 20px;
     margin: 10px 0;
 }
 .userIcon {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     position: relative;
 }
 .userIcon > img {
@@ -640,7 +634,7 @@ footer {
 }
 .userName {
     min-width: 200px;
-    height: 100px;
+    height: 90px;
     position: absolute;
     right: -210px;
     padding-left: 12px;
@@ -656,8 +650,8 @@ footer {
 }
 .userBB-Content {
     width: 100%;
-    min-height: 70px;
-    padding: 10px 12px;
+    min-height: 40px;
+    padding: 0 24px;
     box-sizing: border-box;
 }
 /*archive*/
@@ -669,24 +663,6 @@ footer {
 .find-card-data {
     list-style: none;
 }
-
-@media screen and (max-width: 1550px){
-    .control {
-        width: 100%;
-    }
-}
-@media screen and (max-width: 1240px){
-    .vBox {
-        width: 100%;
-    }
-    .pageTag {
-        width: 100%;
-    }
-    .nice {
-        width: 100%;
-    }
-}
-
 /* animate */
 .menuBackTop {
      animation: menuBack 0.4s;
@@ -723,11 +699,12 @@ footer {
 
 /* 搜索结果 */
 .searchData {
-    color: gray;
+    color: rgba(0,0,0,.45);
 }
 .colorHi {
-    width: 100%;
-    height: 3px;
+    width: 90%;
+    height: 2px;
+    margin: 12px auto;
     background: pink;
 }
 .s-data-card {
@@ -735,6 +712,8 @@ footer {
 }
 .s-data-card-con {
     width: 98%;
+    background: white;
+    border-radius: 3px;
     padding: 0 24px !important;
     padding-bottom: 30px !important;
     padding-top: 8px !important;
@@ -812,14 +791,14 @@ footer {
     align-items: center;
     justify-content: center;
 }
-.small-vMenu-list > li {
+.small-vMenu-list > a > li {
     width: 50px;
     height: 50px;
     list-style: none;
     line-height: 50px;
     text-align: center;
 }
-.small-vMenu-list > li > i {
+.small-vMenu-list > a > li > i {
     color: white;
 }
 .vMenu-onBtn > i {
@@ -1040,5 +1019,32 @@ footer {
     }
     .nextPrev {
         max-width: 90%;
+    }
+}
+@media screen and (max-width: 1550px){
+    .control {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1022px){
+    .blogBody {
+        padding-right: 58px !important;
+    }
+    .right-pageTagMenu {
+        margin-left: 0;
+    }
+    .blogBody-pos {
+        left: 0 !important;
+    }
+}
+@media screen and (max-width: 1240px){
+    .vBox {
+        width: 100%;
+    }
+    .pageTag {
+        width: 100%;
+    }
+    .nice {
+        width: 100%;
     }
 }

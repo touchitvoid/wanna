@@ -1,21 +1,29 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <div class="vMenu" id="vMenu">
-    <div class="vMenu-onBtn">
-        <i class="mdui-icon material-icons">arrow_back</i>
+    <div class="vMenu-onBtn" id="vMenu-onbtn">
+        <i class="mdui-icon material-icons">arrow_forward</i>
     </div>
     <ul class="small-vMenu-list" id="smallMenu">
-        <li class="mdui-ripple">
+        <a href="<?php $this->options->siteUrl(); ?>index.php/pagefile.html">
+            <li class="mdui-ripple">
             <i class="mdui-icon material-icons">book</i>
-        </li>
-        <li class="mdui-ripple">
-            <i class="mdui-icon material-icons">build</i>
-        </li>
-        <li class="mdui-ripple">
-            <i class="mdui-icon material-icons">cloud</i>
-        </li>
-        <li class="mdui-ripple">
-            <i class="mdui-icon material-icons">details</i>
-        </li>
+            </li>
+        </a>
+        <a href="#">
+            <li class="mdui-ripple">
+                <i class="mdui-icon material-icons">build</i>
+            </li>
+        </a>
+        <a href="#">
+            <li class="mdui-ripple">
+                <i class="mdui-icon material-icons">cloud</i>
+            </li>
+        </a>
+        <a href="#">
+            <li class="mdui-ripple">
+                <i class="mdui-icon material-icons">details</i>
+            </li>
+        </a>
     </ul>
     <div class="v-menu-assembly-1">
         <div class="Blog-logo">
