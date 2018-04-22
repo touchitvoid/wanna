@@ -38,4 +38,13 @@
     </ul>
 </header>
 <div class="bg-ovo"></div>
+<script>
+  logo = '<?php echo $this->options->logo ?>';
+    bgurl = '<?php echo $this->options->bgUrl ?>';
+    if (bgurl == ''){
+        bgurl = '/usr/themes/wanna/img/bg.jpg';
+    }else if (logo == ''){
+        logo = '/usr/themes/wanna/img/icon.jpg'
+    }
+</script>
 <div id="body">

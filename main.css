@@ -290,6 +290,7 @@ header {
     margin-bottom: 10px;
     overflow: hidden;
 }
+
 .searchBtn {
     width: 40px;
     height: 40px;
@@ -323,6 +324,9 @@ header {
 .searchIN {
     animation: scearchInfo 0.75s;
     animation-fill-mode: forwards;
+}
+.searchData > h3 {
+    color: white !important;
 }
 @keyframes scearchInfo {
     0% {width: 0}
@@ -439,6 +443,7 @@ footer {
     position: relative;
     background: white;
     color: gray;
+    margin-top: 20px;
 }
 .pageHead {
     letter-spacing: 1px;
@@ -906,6 +911,20 @@ footer {
 }
 .blog-emmm {
     letter-spacing: 1px;
+}
+.body-404 > div {
+    margin-top: 50px;
+    font-size: 1.8em;
+    color: white;
+    letter-spacing: 5px;
+    font-weight: 100;
+}
+.findMore-404 {
+    position: relative;
+    top: 30px;
+    width: 100%;
+    max-width: 500px;
+    background: white;
 }
 
 

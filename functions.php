@@ -2,18 +2,11 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 function themeConfig($form) {
-    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO'));
-    $form->addInput($logoUrl);
-    
-    $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock', 
-    array('ShowRecentPosts' => _t('显示最新文章'),
-    'ShowRecentComments' => _t('显示最近回复'),
-    'ShowCategory' => _t('显示分类'),
-    'ShowArchive' => _t('显示归档'),
-    'ShowOther' => _t('显示其它杂项')),
-    array('ShowRecentPosts', 'ShowRecentComments', 'ShowCategory', 'ShowArchive', 'ShowOther'), _t('侧边栏显示'));
-    
-    $form->addInput($sidebarBlock->multiMode());
+    $bgUrl = new Typecho_Widget_Helper_Form_Element_Text('bgUrl', NULL, NULL, _t('主题背景图片'), _t('填入外部链接来更新背景图片 , 默认使用 bg.jpg'));
+    $form->addInput($bgUrl);
+
+    $logo = new Typecho_Widget_Helper_Form_Element_Text('logo', NULL, NULL, _t('侧边栏Logo'), _t('填入外部链接来更新Logo'));
+    $form->addInput($logo);
 
     $slimg = new Typecho_Widget_Helper_Form_Element_Select('slimg', array(
         'showon'=>'有图文章显示缩略图，无图文章随机显示缩略图',
@@ -23,6 +16,8 @@ function themeConfig($form) {
         'guanbi' => '关闭所有缩略图显示'
     ), 'showon',
         _t('缩略图设置'), _t('默认选择“有图文章显示缩略图，无图文章随机显示缩略图”'));
+    $form->addInput($slimg->multiMode());
+
 
 }
 // 自定义关键字
@@ -114,11 +109,4 @@ function showThumbnail($widget)
         echo $ctu;
     }
 }
-
-/*
-function themeFields($layout) {
-    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点LOGO地址'), _t('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO'));
-    $layout->addItem($logoUrl);
-}
-*/
 

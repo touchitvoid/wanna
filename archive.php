@@ -1,12 +1,12 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
 <div class="mdui-container mdui-typo searchData" role="main">
-    <h4><?php $this->archiveTitle(array(
+    <h3><?php $this->archiveTitle(array(
             'category'  =>  _t('%s 下的文章'),
             'search'    =>  _t('包含关键字 %s 的文章'),
             'tag'       =>  _t('标签 %s 下的文章'),
             'author'    =>  _t('%s 发布的文章')
-        ), '', ''); ?></h4>
+        ), '', ''); ?></h3>
     <?php if ($this->have()): ?>
         <?php while($this->next()): ?>
             <article class="s-data-card mdui-col-md-4">
@@ -28,12 +28,13 @@
             </article>
         <?php endwhile; ?>
     <?php else: ?>
-        <article>
-            <h4 class="post-title"><?php _e('没有找到内容'); ?></h4>
-        </article>
+        <div>呀，没有找到您想要的东西,一定是姿势不对不如试试搜索</div>
+        <form method="post" class="findMore-404 getData-input">
+            <input placeholder="搜索内容( Enter确认 )" type="text" name="s" autofocus />
+        </form>
     <?php endif; ?>
 
-    <?php $this->pageNav('&laquo; 前一页', '后一页 &raquo;'); ?>
+    <?php $this->pageNav('&laquo;', '&raquo;'); ?>
 </div><!-- end #main -->
 
 <?php $this->need('footer.php'); ?>
