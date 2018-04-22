@@ -15,16 +15,11 @@
 </head>
 <body>
 <div class="mdui-container-fluid">
-    <div class="linksCard">
-        <div class="colorBG"></div>
-        <div class="linkCon">
-            <img src="http://img.hb.aicdn.com/678ee4b76426af06d7cf69c58b0ffa441b856528425c2-60yPCk_fw658" title="未加载">
-            <div class="links-text">
-                <div class="blogName">Void</div>
-                <div class="blog-emmm">我是一个友情链接</div>
-            </div>
-        </div>
-    </div>
+
+    <!-- 在我后面添加代码 -->
+
+    <!-- 在我上面添加代码 -->
+
     <script>
             var links = $('body').find('.linksCard');
             setTimeout(function () {
