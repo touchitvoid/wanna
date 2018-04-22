@@ -20,10 +20,10 @@
      <div class="linksCard">
           <div class="colorBG"></div>
           <div class="linkCon">
-              <img src="http://img.hb.aicdn.com/678ee4b76426af06d7cf69c58b0ffa441b856528425c2-60yPCk_fw658" title="未加载">
+              <img src="头像地址">
               <div class="links-text">
-                  <div class="blogName">Void</div>
-                  <div class="blog-emmm">我是一个友情链接</div>
+                  <div class="blogName">博客名字</div>
+                  <div class="blog-emmm">描述</div>
               </div>
           </div>
       </div>
