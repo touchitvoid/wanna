@@ -113,7 +113,9 @@ header {
     position: fixed;
     bottom: 0;
     left: 0;
-    background: url("img/bg.jpg") no-repeat center / cover;
+   background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     filter: blur(4px);
     opacity: .8;
     z-index: -100;
@@ -121,6 +123,7 @@ header {
 .pageTag {
     width: 90%;
     margin: 0 auto;
+    position: relative;
     background: white;
     min-height: 200px;
     margin-top: 30px;
@@ -316,7 +319,7 @@ header {
 .searchColor {
     width: 0;
     height: 40px;
-    background: rgba(0,0,0,.05);
+    background: rgba(0,0,0,.025);
     position: absolute;
     border-radius: 0 20px 20px 0;
     z-index: 1;
@@ -563,11 +566,24 @@ footer {
     position: relative;
     top: 24px;
 }
+.replyId {
+    display: none;
+}
+.newBB {
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.comments > ol {
+    padding-left: 0 !important;
+}
 .replayBtn {
     color: white;
     letter-spacing: 1px;
     background: #8ec5fc;
     padding: 4px 30px;
+}
+.replayBtn > a {
+    color: white !important;
 }
 .replayLine {
     width: 100%;
@@ -617,7 +633,8 @@ footer {
 }
 .userBB {
     width: 100%;
-    margin-top: 16px;
+    margin-top: 8px;
+    margin-bottom: 12px;
     border-radius: 3px;
     position: relative;
 }

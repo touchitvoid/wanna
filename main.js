@@ -1,12 +1,4 @@
 window.onload = function () {
-
-    $('.iam-img').css({
-        backgroundImage : "url("+logo+")"
-    });
-    $('.bg-ovo').css({
-        backgroundImage : "url("+bgurl+")"
-    });
-    
     switchNow = 0;
     var mh = $('.mobie-head');
     $('#open-hMenu').click(function () {
