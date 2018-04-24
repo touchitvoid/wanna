@@ -43,12 +43,10 @@
     bgurl = '<?php echo $this->options->bgUrl ?>';
     if (bgurl == ''){
         bgurl = '/usr/themes/wanna/img/bg.jpg';
-    }if (logo == ''){
+    }
+    if (logo == ''){
         logo = '/usr/themes/wanna/img/icon.jpg'
     }
-  $('.iam-img').css({
-      backgroundImage : "url("+logo+")"
-  });
   $('.bg-ovo').css({
       backgroundImage : "url("+bgurl+")"
   });

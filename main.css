@@ -770,11 +770,13 @@ footer {
     top: 50%;
 }
 .iam-img {
-    width: 90%;
+    width: 88%;
     margin: 0 auto;
-    background: url('img/icon.jpg') no-repeat center / cover;
-    height: 135px;
-    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 130px;
+    border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,.15);
 }
 .iam-t {

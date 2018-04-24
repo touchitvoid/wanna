@@ -9,17 +9,17 @@
             <i class="mdui-icon material-icons">book</i>
             </li>
         </a>
-        <a href="#">
+        <a>
             <li class="mdui-ripple">
                 <i class="mdui-icon material-icons">build</i>
             </li>
         </a>
-        <a href="#">
+        <a>
             <li class="mdui-ripple">
                 <i class="mdui-icon material-icons">cloud</i>
             </li>
         </a>
-        <a href="#">
+        <a>
             <li class="mdui-ripple">
                 <i class="mdui-icon material-icons">details</i>
             </li>
@@ -27,7 +27,7 @@
     </ul>
     <div class="v-menu-assembly-1">
         <div class="Blog-logo">
-            <div class="iam-img"></div>
+            <div class="iam-img" id="logo"></div>
             <div class="iam-t mdui-typo">
                 <h5><?php $this->options->title() ?></h5>
                 <p><?php $this->options->description() ?></p>
@@ -37,9 +37,14 @@
     <div class="v-menu-assembly-2">
         <ul class="vMenu-item-list">
            <a href="<?php $this->options->siteUrl(); ?>index.php/pagefile.html"><li class="mdui-ripple">归档</li></a>
-            <a href="#"><li class="mdui-ripple">工具</li></a>
-            <a href="#"> <li class="mdui-ripple">导航</li></a>
+            <a><li class="mdui-ripple">工具</li></a>
+            <a> <li class="mdui-ripple">导航</li></a>
             <a href="https://github.com/touchitvoid"><li class="mdui-ripple">Github</li></a>
         </ul>
     </div>
 </div>
+<script>
+    $('.iam-img').css({
+        backgroundImage : "url("+logo+")"
+    });
+</script>
