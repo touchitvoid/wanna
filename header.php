@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <title><?php $this->options->title(); ?><?php $this->archiveTitle(); ?></title>
     <link rel="stylesheet" type="text/css" media="all" href="<?php $this->options->themeUrl('main.css'); ?>" />
-    <link rel="stylesheet" type="text/css" media="all" href="<?php $this->options->themeUrl('mdui.min.css'); ?>" />
-    <script type="text/javascript" src="<?php $this->options->themeUrl('mdui.min.js'); ?>"></script>
+    <link rel="icon" href="<?php echo $this->options->icon ?>">
+    <link href="https://cdn.bootcss.com/mdui/0.4.1/css/mdui.css" rel="stylesheet">
     <script type="text/javascript" src="<?php $this->options->themeUrl('jquery-3.3.1.min.js'); ?>"></script>
     <script type="text/javascript" src="<?php $this->options->themeUrl('main.js'); ?>"></script>
     <?php $this->header(); ?>
@@ -16,7 +16,7 @@
 <header id="header">
     <ul class="header-tab-1">
          <li class="mdui-ripple"><a href="<?php $this->options->siteUrl(); ?>">主页</a></li>
-         <li class="mdui-ripple"><a>留言</a></li>
+         <li class="mdui-ripple"><a href="<?php $this->options->siteUrl(); ?>index.php/emmm.html">留言</a></li>
          <li class="mdui-ripple"><a href="<?php $this->options->siteUrl(); ?>index.php/friend.html">友链</a></li>
          <li class="mdui-ripple"><a>关于</a></li>
     </ul>

@@ -13,11 +13,13 @@ if(is_array($_GET)&&count($_GET)>0)
         replyName =  replyId.find('.name:first > a').text();
         replyCon =  replyId.find('.userBB-Content:first > p').text();
         if (replyId !== ''){
-            $('.replyId').css({
-                display : 'block'
-            });
+            $('.replyId').fadeIn();
             $('.reply-name').text(replyName);
             $('.replyCon').text('" '+replyCon+' "');
+        }else {
+            $('.replyId').css({
+                display : 'none'
+            })
         }
     });
 </script>

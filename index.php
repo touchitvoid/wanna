@@ -110,11 +110,14 @@ $this->need('header.php');
                                                 <a href="<?php $recent->permalink(); ?>">
                                                     <div><?php $recent->title();?></div>
                                                 </a>
+                                                <div>
                                                 <span><?php $recent->date('Y / F j'); ?></span>
-                                                <span class="mdui-float-right nextNewPageData">
+                                                    <span class="mdui-float-right nextNewPageData">
                                             <i class="mdui-icon material-icons">check</i>
                                             评论：<a><?php $recent->commentsNum('%d'); ?></a>
-                                        </span>
+                                                         </span>
+                                                </div>
+
                                             </div>
                                         <?php endwhile; endif;?>
                                 </div>

@@ -917,8 +917,8 @@ footer {
     width: auto;
 }
 .linkCon > img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     margin-right: 10px;
     background-color: rgba(0,0,0,.15);
     border-radius: 50%;
@@ -944,6 +944,37 @@ footer {
     width: 100%;
     max-width: 500px;
     background: white;
+}
+
+/*留言*/
+.i-tellYou {
+    color: gray;
+    padding: 0 !important;
+    margin-bottom: 30px;
+    background: white;
+}
+.i-tell-content {
+    box-sizing: border-box;
+    padding: 16px 20px !important;
+    margin-bottom: 30px;
+}
+.can-you-Tell-me {
+    height: 240px;
+    background-color: pink;
+    background: url("img/bg.jpg") no-repeat center / cover;
+}
+.tellYou {
+    margin: 30px 0;
+}
+.tellYou > .sibi {
+    box-shadow: none;
+    padding: 0;
+}
+.tellYou > .sibi > .nextPrev {
+    display: none;
+}
+.tellYou > .sibi > .comments > ol > .userBB > .replayLine {
+    display: none;
 }
 
 
@@ -1038,6 +1069,9 @@ footer {
     /*  页面与header的交互 */
 
     /* 用户评论 */
+    .userBB {
+        padding-bottom: 1px;
+    }
     .userIcon {
         width: 70px;
         height: 70px;
