@@ -17,16 +17,18 @@
  - 外观 -> 编辑当前外观 -> friend.php 里面的注释部分添加代码，格式如下
 
 > 
-     <div class="linksCard">
-          <div class="colorBG"></div>
-          <div class="linkCon">
-              <img src="头像地址">
-              <div class="links-text">
-                  <div class="blogName">博客名字</div>
-                  <div class="blog-emmm">描述</div>
-              </div>
-          </div>
-      </div>
+     <a href="博客链接">
+        <div class="linksCard">
+            <div class="colorBG"></div>
+            <div class="linkCon">
+                <img src="头像地址">
+                <div class="links-text">
+                    <div class="blogName">博客名字</div>
+                    <div class="blog-emmm">描述</div>
+                </div>
+            </div>
+        </div>
+      </a>
   
 
 
