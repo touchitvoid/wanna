@@ -9,6 +9,12 @@ function themeConfig($form) {
     $form->addInput($logo);
     $icon = new Typecho_Widget_Helper_Form_Element_Text('icon', NULL, NULL, _t('网站图标'), _t('填入外部链接来更新icon'));
     $form->addInput($icon);
+    $friendUrl = new Typecho_Widget_Helper_Form_Element_Text('friendUrl', NULL, NULL, _t('友链页面url'), _t('新建独立页面时指定的链接'));
+    $form->addInput($friendUrl);
+    $pageFile = new Typecho_Widget_Helper_Form_Element_Text('pageFile', NULL, NULL, _t('归档页面url'), _t('新建独立页面时指定的链接'));
+    $form->addInput($pageFile);
+    $messageUrl = new Typecho_Widget_Helper_Form_Element_Text('messageUrl', NULL, NULL, _t('留言页面url'), _t('新建独立页面时指定的链接'));
+    $form->addInput($messageUrl);
 
     $slimg = new Typecho_Widget_Helper_Form_Element_Select('slimg', array(
         'showon'=>'有图文章显示缩略图，无图文章随机显示缩略图',

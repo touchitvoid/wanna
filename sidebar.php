@@ -36,7 +36,7 @@
     </div>
     <div class="v-menu-assembly-2">
         <ul class="vMenu-item-list">
-           <a href="<?php $this->options->siteUrl(); ?>index.php/pagefile.html"><li class="mdui-ripple">归档</li></a>
+           <a href="<?php echo $this->options->pageFile; ?>"><li class="mdui-ripple">归档</li></a>
             <a><li class="mdui-ripple">工具</li></a>
             <a> <li class="mdui-ripple">导航</li></a>
             <a href="https://github.com/touchitvoid"><li class="mdui-ripple">Github</li></a>

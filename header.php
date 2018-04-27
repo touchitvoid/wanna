@@ -16,8 +16,8 @@
 <header id="header">
     <ul class="header-tab-1">
          <li class="mdui-ripple"><a href="<?php $this->options->siteUrl(); ?>">主页</a></li>
-         <li class="mdui-ripple"><a href="<?php $this->options->siteUrl(); ?>index.php/emmm.html">留言</a></li>
-         <li class="mdui-ripple"><a href="<?php $this->options->siteUrl(); ?>index.php/friend.html">友链</a></li>
+         <li class="mdui-ripple"><a href="<?php echo $this->options->messageUrl; ?>">留言</a></li>
+         <li class="mdui-ripple"><a href="<?php echo $this->options->friendUrl; ?>">友链</a></li>
          <li class="mdui-ripple"><a>关于</a></li>
     </ul>
     <ul class="header-tab-1 header-tab-2" >
