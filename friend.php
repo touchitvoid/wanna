@@ -49,15 +49,17 @@
     <!-- 在我上面添加代码 -->
 
     <script>
-            var links = $('body').find('.linksCard');
-            setTimeout(function () {
-                for (var i = 0;i <links.length;i++){
-                    var num = Math.floor(Math.random()*300)+30;
-                    links.eq(i).animate({
-                        marginLeft : num+'px'
-                    })
-                }
-            },200);
+            if(!/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                var links = $('body').find('.linksCard');
+                setTimeout(function () {
+                    for (var i = 0;i <links.length;i++){
+                        var num = Math.floor(Math.random()*300)+30;
+                        links.eq(i).animate({
+                            marginLeft : num+'px'
+                        })
+                    }
+                },200);
+            }
     </script>
 </div>
 <?php $this->need('footer.php'); ?>

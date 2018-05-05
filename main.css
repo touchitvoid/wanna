@@ -1108,6 +1108,9 @@ footer {
     .pageContent > p > img {
         max-width: 100%;
     }
+    .pageContent a {
+        word-break: break-word;
+    }
 
 
     /*vMenu 移动端适配*/
@@ -1134,6 +1137,16 @@ footer {
     }
     .nextPrev {
         max-width: 90%;
+    }
+
+    .linksCard {
+        width: 100%;
+    }
+    .linkCon {
+        padding: 10px 16px;
+    }
+    .linksCard {
+        margin-left: 0;
     }
 }
 @media screen and (max-width: 1550px){
