@@ -1,23 +1,7 @@
 window.onload = function () {
-    switchNow = 0;
-    var mh = $('.mobie-head');
-    $('#open-hMenu').click(function () {
-        if (switchNow == 0){
-            animateFor('header','menuBackTop','menuBackZero');
-            animateFor('#controlBtn','controlBtnSB','controlBtnSS');
-            $('#controlBtn').find('i').eq(1).text('close').css({color: 'rgba(0,0,0,.45)'});
-            mh.css({display: 'none'});
-            $('#open-Vmenu').attr('disabled',true);
-            switchNow = 1;
-        }else {
-            animateFor('header','menuBackZero','menuBackTop');
-            animateFor('#controlBtn','controlBtnSS','controlBtnSB');
-            $('#controlBtn').find('i').eq(1).text('menu').css({color: 'white'});
-            mh.css({display: 'block'});
-            $('#open-Vmenu').attr('disabled',false);
-            switchNow = 0;
-        }
-    });
+    reload();
+};
+function reload() {
 
     $('.flexTag').click(function () {
         nowCard = $(this).val();
@@ -88,27 +72,44 @@ window.onload = function () {
             })
         }
     });
-  vMenu_M = 0;
+    vMenu_M = 0;
     $('#open-Vmenu').click(function () {
         var h = screen.height;
         if (vMenu_M == 0){
-                an_Move('body','-190px','0','350ms');
+            an_Move('body','-190px','0','350ms');
             an_Move('vMenu','-190px','0','350ms');
             $('body').after("<div class='shading'></div>");
-                vMenu_M = 1;
-                if (vMenu_M == 1){
-                    $('.shading').click(function () {
-                        an_Move('body','0','0','350ms');
-                        an_Move('vMenu','0','0','350ms');
-                        $('.shading').remove();
-                        vMenu_M = 0;
-                    });
-                }
+            vMenu_M = 1;
+            if (vMenu_M == 1){
+                $('.shading').click(function () {
+                    an_Move('body','0','0','350ms');
+                    an_Move('vMenu','0','0','350ms');
+                    $('.shading').remove();
+                    vMenu_M = 0;
+                });
+            }
         }
     });
+    PageReload();
+    $('.page-navigator > li').click(function () {
+        sa = $(this);
+        $('body,html').animate({
+            scrollTop : '0'
+        },300,function () {
+            $.pjax({
+                url : sa.find('a').attr('href'),
+                container : '#qwq',
+                fragment: '#qwq',
+                timeout : '50000'
+            })
+        })
+    });
+}
+function PageReload() {
+    $('.comments > ol > .userBB').addClass('mdui-col-offset-md-1');
 
-    $('.userBB:odd').addClass('mdui-col-offset-md-1');
-};
+    $('.comment-children > .comment-list').find('.userBB').removeClass('mdui-col-md-8').addClass('mdui-col-md-11 mdui-col-offset-md-1');
+}
 function allHidden() {
     $('.tabCard').css({
         display : 'none'

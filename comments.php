@@ -31,7 +31,7 @@ if(is_array($_GET)&&count($_GET)>0)
         <div class="mdui-divider" style="margin: 15px 0"></div>
     </div>
     <div class="newBB">
-        <div class="replyId">正在回复给 <span class="reply-name"></span>&nbsp<span class="replyCon"></span></div>
+        <div class="replyId" id="replyId">正在回复给 <span class="reply-name"></span>&nbsp<span class="replyCon"></span></div>
         <form method="post" action="<?php $this->commentUrl() ?>" style="width: 100%" role="form" id="comment_form">
             <?php if($this->user->hasLogin()): ?>
                 <p><?php _e('登录身份: '); ?><a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?> &raquo; </a></p>
@@ -65,7 +65,9 @@ if(is_array($_GET)&&count($_GET)>0)
     <div class="nextPrev">
         <div><i class="mdui-icon material-icons">chevron_left</i><?php $this->theNext('%s','哇 没了'); ?></div>
         <span id='theFlexBor'></span>
-        <div><?php $this->thePrev('%s','哇 没了'); ?><i class="mdui-icon material-icons">chevron_right</i></div>
+        <div><?php $this->thePrev('%s','哇 没了'); ?>
+            <i class="mdui-icon material-icons">chevron_right</i>
+        </div>
     </div>
     <?php function threadedComments($comments, $options) {
         $commentClass = '';
@@ -79,11 +81,17 @@ if(is_array($_GET)&&count($_GET)>0)
         $commentLevelClass = $comments->_levels > 0 ? ' comment-child' : ' comment-parent';  //评论层数大于0为子级，否则是父级
         ?>
 
-        <div class="userBB mdui-col-md-10 shadow-1 " id="<?php $comments->theId(); ?>">
+        <div class="userBB mdui-col-md-8" id="<?php $comments->theId(); ?>">
+            <div class="replyTools">
+                    <button class="mdui-btn mdui-btn-icon mdui-ripple replyBtn">
+                        <i class="mdui-icon material-icons">reply</i>
+                        <?php $comments->reply('test'); ?>
+                    </button>
+            </div>
             <div class="colorBar"></div>
             <div class="userData">
                 <div class="userIcon">
-                    <?php $comments->gravatar('90', ''); ?>
+                    <?php $comments->gravatar('65', ''); ?>
                     <div class="userName">
                         <div class="name"><?php $comments->author(); ?></div>
                         <div class="Jurisdiction"><?php $comments->date('Y-m-d H:i'); ?></div>
@@ -92,9 +100,6 @@ if(is_array($_GET)&&count($_GET)>0)
             </div>
             <div class="userBB-Content">
                 <?php $comments->content(); ?>
-            </div>
-            <div class="replayLine">
-                <button class="replayBtn btnclearDcss borR5px"><?php $comments->reply('回复'); ?></button>
             </div>
             <?php if ($comments->children) { ?>
                 <div class="comment-children">

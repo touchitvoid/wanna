@@ -23,6 +23,13 @@
         <h4></h4>
         <p><?php $this->content('Continue Reading...'); ?></p>
     </div>
+    <div class="pay justCenter">
+        <button class="mdui-ripple mdui-btn shadow-1 payBtn" mdui-dialog="{target: '#payImg'}">
+            <i class="mdui-icon material-icons" style="font-size: 18px">favorite</i> 赞赏
+    </div>
+    <div class="mdui-dialog" id="payImg">
+        <img src='<?php echo $this->options->pay ?>' />
+    </div>
 </div>
 
 <?php $this->need('comments.php'); ?>

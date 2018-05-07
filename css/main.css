@@ -132,7 +132,7 @@ header {
 }
 .pageTag > div {
     width: 50%;
-    min-height: 200px;
+    min-height: 205px;
     position: relative;
     display: inline-block;
 }
@@ -151,7 +151,7 @@ header {
 .cardImage-img {
     width: 100%;
     height: 100%;
-    background: url("img/test.jpg");
+    background: url("../img/test.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -196,7 +196,7 @@ header {
 .hiddenSquare {
     width: 0;
     height: 0;
-    border-bottom: 200px solid white;
+    border-bottom: 205px solid white;
     border-left: 50px solid transparent;
     border-right: 0 solid transparent;
     position: absolute;
@@ -251,6 +251,8 @@ header {
     background: rgba(0,0,0,.1);
 }
 .page-navigator > li > a {
+    position: relative;
+    z-index: -1;
     font-size: 1em;
     text-decoration: none;
     color: rgba(0,0,0,.5);
@@ -271,7 +273,7 @@ header {
 }
 .nav:hover {
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
-    background-color: hsla(0,0%,100%,.5);
+    background-color: hsla(0,0%,100%,.4);
 }
 /* blogControl */
 .control {
@@ -367,7 +369,7 @@ header {
     position: absolute;
     top: -15px;
     opacity: 0;
-    background: url("img/tab_cat.png") no-repeat right top / 20px;
+    background: url("../img/tab_cat.png") no-repeat right top / 20px;
     z-index: 0;
 }
 .cat1 {
@@ -384,16 +386,57 @@ header {
 }
 .boaCon {
     width: 100%;
-    min-height: 185Px;
+    min-height: 185px;
     letter-spacing: 1px;
 }
-.boaCon > ul {
-    padding: 0;
+.reply-comments {
+    padding-left: 0.3em !important;
 }
-.boaCon > ul > li {
+.newCom-data {
+    height: 50px;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.newCom-data > h6 {
+   margin: 0 !important;
+}
+.newCom-data > p {
+    font-size: 13px;
+    word-break: break-word;
+}
+.com-readmore {
+    position: absolute !important;
+    right: 0;
+    top: 22px;
+    display: none;
+    opacity: 0;
+}
+.reply-comments {
+    margin: 0 !important;
+}
+.reply-comments > li:hover .com-readmore {
+    display: block;
+    opacity: 1;
+}
+.reply-comments > li {
+    padding: 7px;
+    position: relative;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
     list-style: none;
     line-height: 37px;
     font-size: .97em;
+}
+.reply-comments > li > img {
+    border-radius: 50%;
+    margin-right: 8px;
+    border: 1px solid rgba(0,0,0,.05);
 }
 
 /* 最新文章 样式订正 */
@@ -442,7 +485,8 @@ footer {
 /* PAGE */
 .pageBody {
     padding: 16px;
-    min-height: 400px;
+    padding-bottom: 80px;
+    min-height: 500px;
     position: relative;
     background: white;
     color: gray;
@@ -479,12 +523,25 @@ footer {
 .pageContent {
     padding: 0 35px;
 }
+.pay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+}
+.pay > button {
+    color: white;
+    width: 180px;
+    background-image: linear-gradient(to right,lightskyblue,pink);
+}
 .pageContent > p > img {
     max-width: 30em;
     margin: 0 auto;
 }
 .sibi {
     margin: 20px 0;
+    margin-bottom: 70px;
     min-height: 200px;
     padding: 12px;
     box-sizing: border-box;
@@ -558,39 +615,21 @@ footer {
 }
 
 
-
 .comments {
+    width: 100%;
     margin-top: 25px;
     padding: 0 20px;
+    box-sizing: border-box;
     clear: both;
     position: relative;
     top: 24px;
 }
-.replyId {
-    display: none;
-}
 .newBB {
     box-sizing: border-box;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 .comments > ol {
     padding-left: 0 !important;
-}
-.replayBtn {
-    color: white;
-    letter-spacing: 1px;
-    background: #8ec5fc;
-    padding: 4px 30px;
-}
-.replayBtn > a {
-    color: white !important;
-}
-.replayLine {
-    width: 100%;
-    text-align: right;
-    height: 36px;
-    box-sizing: border-box;
-    padding: 0 6px;
 }
 .nextPrev {
     min-width: 300px;
@@ -634,9 +673,42 @@ footer {
 .userBB {
     width: 100%;
     margin-top: 8px;
-    margin-bottom: 12px;
-    border-radius: 3px;
+    border-radius: 4px;
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
     position: relative;
+    box-sizing: border-box;
+    padding-bottom: 8px;
+    background-color: white;
+}
+.replyTools {
+    width: 40px;
+    height: 40px;
+    line-height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}.replyBtn > i {
+    color: rgba(0,0,0,.35);
+ }.replyBtn > a {
+    display: block;
+    height: 40px;
+    width: 40px;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+   }
+.userBB:after {
+    content: '';
+    width: 3px;
+    height: 50px;
+    background: lightblue;
+    position: absolute;
+    top: 30px;
+    right: 0;
+}
+.comment-children > ol > .userBB:after {
+    background: #D2C2ED;
 }
 .userData {
     position: relative;
@@ -644,37 +716,41 @@ footer {
     margin: 10px 0;
 }
 .userIcon {
-    width: 90px;
-    height: 90px;
+    width: 65px;
+    height: 65px;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 .userIcon > img {
     border-radius: 50%;
-    width: 100%;
-    height: 100%;
     position: absolute;
 }
 .userName {
     min-width: 200px;
-    height: 90px;
+    height: 65px;
     position: absolute;
-    right: -210px;
+    right: -200px;
     padding-left: 12px;
     box-sizing: border-box;
 }
+
 .name {
     font-size: 18px;
-    height: 60px;
-    line-height: 60px;
+    height: 40px;
+    line-height: 45px;
 }
 .Jurisdiction {
-    height: 20px;
+    height: 25px;
 }
 .userBB-Content {
     width: 100%;
-    min-height: 40px;
     padding: 0 24px;
     box-sizing: border-box;
+}
+.comment-list {
+    position: relative;
+    padding-left: 0.2em !important;
 }
 /*archive*/
 .vCard {
@@ -844,7 +920,7 @@ footer {
 
 .mobie-head {
     display: none;
-    width: 50%;
+    width: 70%;
     height: 50px;
     position: absolute;
     bottom: 0;
@@ -961,7 +1037,7 @@ footer {
 .can-you-Tell-me {
     height: 240px;
     background-color: pink;
-    background: url("img/bg.jpg") no-repeat center / cover;
+    background: url("../img/bg.jpg") no-repeat center / cover;
 }
 .tellYou {
     margin: 30px 0;
@@ -971,9 +1047,6 @@ footer {
     padding: 0;
 }
 .tellYou > .sibi > .nextPrev {
-    display: none;
-}
-.tellYou > .sibi > .comments > ol > .userBB > .replayLine {
     display: none;
 }
 
@@ -1044,7 +1117,7 @@ footer {
         background-color: white !important;
         padding: 0;
         right: 0;
-        background: url("img/menuBottom-bg.png") no-repeat center -100px / cover;
+        background: url("../img/menuBottom-bg.png") no-repeat center -100px / cover;
     }
     #controlBtn {
         box-sizing: border-box;
@@ -1069,6 +1142,9 @@ footer {
     /*  页面与header的交互 */
 
     /* 用户评论 */
+    .newBB {
+        padding: 0 20px;
+    }
     .userBB {
         padding-bottom: 1px;
     }
@@ -1086,6 +1162,9 @@ footer {
     .Jurisdiction {
         height: 25px;
         line-height: 25px;
+    }
+    .comment-list {
+        margin-bottom: 0.65em !important;
     }
     /* 文章详情 */
     .taptap > div {
@@ -1134,6 +1213,7 @@ footer {
     }
     #body {
         padding-top: 60px;
+        padding-right: 0 !important;
     }
     .nextPrev {
         max-width: 90%;
@@ -1147,16 +1227,19 @@ footer {
     }
     .linksCard {
         margin-left: 0;
+        margin-top: 18px;
     }
 }
 @media screen and (max-width: 1550px){
     .control {
         width: 100%;
     }
+
 }
 @media screen and (max-width: 1022px){
-    .blogBody {
-        padding-right: 58px !important;
+    #body {
+        box-sizing: border-box;
+        padding-right: 50px;
     }
     .right-pageTagMenu {
         margin-left: 0;

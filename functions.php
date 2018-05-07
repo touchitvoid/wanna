@@ -4,7 +4,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function themeConfig($form) {
     $bgUrl = new Typecho_Widget_Helper_Form_Element_Text('bgUrl', NULL, NULL, _t('主题背景图片'), _t('填入外部链接来更新背景图片 , 默认使用 bg.jpg'));
     $form->addInput($bgUrl);
-
     $logo = new Typecho_Widget_Helper_Form_Element_Text('logo', NULL, NULL, _t('侧边栏Logo'), _t('填入外部链接来更新Logo'));
     $form->addInput($logo);
     $icon = new Typecho_Widget_Helper_Form_Element_Text('icon', NULL, NULL, _t('网站图标'), _t('填入外部链接来更新icon'));
@@ -17,6 +16,10 @@ function themeConfig($form) {
     $form->addInput($messageUrl);
     $start_time = new Typecho_Widget_Helper_Form_Element_Text('start_time', NULL, NULL, _t('博客运行时间记录（开始时间）'), _t('格式 2018-04-10 00:00:00 务必一致'));
     $form->addInput($start_time);
+    $pay = new Typecho_Widget_Helper_Form_Element_Text('pay', NULL, NULL, _t('赞赏二维码'), _t('推荐支付宝or微信二维码'));
+    $form->addInput($pay);
+    $comNum = new Typecho_Widget_Helper_Form_Element_Text('comNum', NULL, NULL, _t('最新评论列表展示条数'), _t('默认最新6条评论'));
+    $form->addInput($comNum);
 
     $slimg = new Typecho_Widget_Helper_Form_Element_Select('slimg', array(
         'showon'=>'有图文章显示缩略图，无图文章随机显示缩略图',

@@ -1,10 +1,10 @@
 <?php
 /**
- * 简单的线条及彩色
+ * 需要关闭 “垃圾评论保护” 和 “检查评论来源页 URL 是否与文章链接一致”
  *
  * @package snow
  * @author Void
- * @version 1.0
+ * @version 1.2
  * @link http://typecho.org
  */
 
@@ -13,7 +13,7 @@ $this->need('header.php');
 ?>
     <div class="mdui-container-fluid blogBody">
         <div class="blogBody-pos">
-            <div class="left-page-list mdui-col-md-7">
+            <div class="left-page-list mdui-col-md-7" id="qwq">
                 <?php while($this->next()): ?>
                 <div class="pageTag shadow-5">
                     <div class="cardImage">
@@ -26,7 +26,7 @@ $this->need('header.php');
                                 <?php endif; ?>
                             <?php endif; ?>
 
-                            <div class="readMore" mdui-tooltip="{content: '阅读全文'}">
+                            <div class="readMore">
                                 <div><i class="mdui-icon material-icons">keyboard_arrow_left</i></div>
                                 <div class="sqReadMore"></div>
                             </div>
@@ -41,7 +41,7 @@ $this->need('header.php');
                                 时间：<a><?php $this->date('Y / F j'); ?></a>&nbsp
                                 标签：<a><?php $this->category(','); ?></a>
                             </div>
-                            <p style="font-size: 0.92em"><?php $this->excerpt(50,'...'); ?></p>
+                            <p style="font-size: 0.92em"><?php $this->excerpt(40,'...'); ?></p>
                         </div>
                         <div class="ovo">
                             <div class="ovo-icon">
@@ -92,10 +92,27 @@ $this->need('header.php');
                             <div>
                                 <div class="tabCard firstTabCard">
                                     <div class="boaCon marCenter">
-                                        <ul>
-                                            <?php $this->widget('Widget_Comments_Recent')->to($comments); ?>
+                                        <ul class="reply-comments">
+                                            <?php
+                                            $pageSize = 6;
+                                            if ($this->options->comNum !== ''){
+                                                $pageSize = $this->options->comNum;
+                                            }
+                                            $this->widget('Widget_Comments_Recent','pageSize='.$pageSize)->to($comments);
+                                            ?>
                                             <?php while($comments->next()): ?>
-                                                <li><?php $comments->author(false); ?>: <a href="<?php $comments->permalink(); ?>"><?php $comments->excerpt(15, '...'); ?></a></li>
+                                                <li>
+                                                    <?php $comments->gravatar('53', ''); ?>
+                                                    <div class="newCom-data">
+                                                        <h6><?php $comments->author(false); ?></h6>
+                                                        <p><?php $comments->excerpt(18, '...'); ?></p>
+                                                        <a href="<?php $comments->permalink(); ?>" class="com-readmore">
+                                                            <button class="mdui-btn mdui-btn-icon mdui-ripple">
+                                                                <i class="mdui-icon material-icons" style="color: rgba(0,0,0,.3);font-size: 22px">message</i>
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                </li>
                                             <?php endwhile; ?>
                                         </ul>
                                     </div>
