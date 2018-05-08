@@ -50,6 +50,11 @@ $this->need('header.php');
                                     <span style="margin: 0 3px">:</span>
                                     <span><?php $this->commentsNum('%d'); ?></span>
                                 </div>
+                                <div class="dataIcon mdui-ripple">
+                                    <i class="mdui-icon material-icons">remove_red_eye</i>
+                                    <span style="margin: 0 3px">:</span>
+                                    <span><?php get_post_view($this) ?></span>
+                                </div>
                             </div>
                         </div>
                     </div>

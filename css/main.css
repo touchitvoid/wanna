@@ -129,6 +129,7 @@ header {
     margin-top: 30px;
     display: flex;
     overflow: hidden;
+    border-radius: 5px;
 }
 .pageTag > div {
     width: 50%;
@@ -279,6 +280,7 @@ header {
 .control {
     border-radius: 5px;
     width: 90%;
+    min-width: 280px;
     min-height: 500px;
     margin-top: 30px;
     padding: 20px 18px;
@@ -307,6 +309,7 @@ header {
     width: 100%;
     height: 40px;
     padding-left: 50px;
+    padding-right: 12px;
     box-sizing: border-box;
     border: none;
     color: gray;
@@ -532,7 +535,7 @@ footer {
 }
 .pay > button {
     color: white;
-    width: 180px;
+    width: 155px;
     background-image: linear-gradient(to right,lightskyblue,pink);
 }
 .pageContent > p > img {
@@ -1234,7 +1237,9 @@ footer {
     .control {
         width: 100%;
     }
-
+    .blogBody-pos {
+        left: 2% !important;
+    }
 }
 @media screen and (max-width: 1022px){
     #body {

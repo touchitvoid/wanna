@@ -23,7 +23,7 @@ if(is_array($_GET)&&count($_GET)>0)
         }
     });
 </script>
-<div class="mdui-container sibi shadow-2 mdui-typo">
+<div class="mdui-container sibi borR5px shadow-2 mdui-typo">
     <?php $this->comments()->to($comments); ?>
     <?php if($this->allow('comment')): ?>
     <div class="pageHead" id="<?php $this->respondId(); ?>">
