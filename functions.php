@@ -25,7 +25,7 @@ function themeConfig($form) {
         '8'=>'小号',
         '9'=>'中号',
         '10'=>'大号'
-    ),'sizeOn',
+    ),'8',
         _t('评论卡片大小'),_t('默认最小'));
     $form->addInput($comSize->multiMode());
 
