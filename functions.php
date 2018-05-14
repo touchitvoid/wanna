@@ -21,6 +21,14 @@ function themeConfig($form) {
     $comNum = new Typecho_Widget_Helper_Form_Element_Text('comNum', NULL, NULL, _t('最新评论列表展示条数'), _t('默认最新6条评论'));
     $form->addInput($comNum);
 
+    $comSize = new Typecho_Widget_Helper_Form_Element_Select('comSize', array(
+        '8'=>'小号',
+        '9'=>'中号',
+        '10'=>'大号'
+    ),'sizeOn',
+        _t('评论卡片大小'),_t('默认最小'));
+    $form->addInput($comSize->multiMode());
+
     $slimg = new Typecho_Widget_Helper_Form_Element_Select('slimg', array(
         'showon'=>'有图文章显示缩略图，无图文章随机显示缩略图',
         'Showimg' => '有图文章显示缩略图，无图文章只显示一张固定的缩略图',
@@ -32,6 +40,9 @@ function themeConfig($form) {
     $form->addInput($slimg->multiMode());
 
 
+}
+function comSize(){
+    echo Typecho_Widget::widget('Widget_Options')->comSize;
 }
 // 自定义关键字
 function themeFields($layout) {

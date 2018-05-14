@@ -8,7 +8,6 @@
     $this->need('header.php');
 ?>
 <div class="mdui-container-fluid">
-
     <!-- 在我后面添加代码 -->
     <?php $this->content('Continue Reading...'); ?>
     <!-- 在我上面添加代码 -->

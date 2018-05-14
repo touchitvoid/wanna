@@ -1,7 +1,7 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
 <footer>
-    Powered By Void <a>©touchitvoid</a> ovo 2018 已经安稳的运行了<?php getBuildTime($this->options->start_time) ?>
+    theme: <a href="http://icry.info/" style="color: deeppink;">wanna</a> 安稳的运行了<?php getBuildTime($this->options->start_time) ?>
     <script>
         $(document).pjax('#body a,#header a','#body',{
             fragment: '#body',

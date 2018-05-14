@@ -81,7 +81,7 @@ if(is_array($_GET)&&count($_GET)>0)
         $commentLevelClass = $comments->_levels > 0 ? ' comment-child' : ' comment-parent';  //评论层数大于0为子级，否则是父级
         ?>
 
-        <div class="userBB mdui-col-md-8" id="<?php $comments->theId(); ?>">
+        <div class="userBB mdui-col-md-<?php comSize(); ?>" id="<?php $comments->theId(); ?>">
             <div class="replyTools">
                     <button class="mdui-btn mdui-btn-icon mdui-ripple replyBtn">
                         <i class="mdui-icon material-icons">reply</i>

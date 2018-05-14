@@ -1053,7 +1053,6 @@ footer {
     display: none;
 }
 
-
 @media screen and (max-width: 600px){
     .archives ul {
         padding-left: 0 !important;
@@ -1226,11 +1225,15 @@ footer {
         width: 100%;
     }
     .linkCon {
-        padding: 10px 16px;
+        padding: 8px 12px;
     }
     .linksCard {
         margin-left: 0;
         margin-top: 18px;
+    }
+
+    #newFriend {
+        right: 16px;
     }
 }
 @media screen and (max-width: 1550px){

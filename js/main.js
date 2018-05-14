@@ -2,7 +2,6 @@ window.onload = function () {
     reload();
 };
 function reload() {
-
     $('.flexTag').click(function () {
         nowCard = $(this).val();
         $('.cat').remove();

@@ -7,11 +7,11 @@
     <title><?php $this->options->title(); ?><?php $this->archiveTitle(); ?></title>
     <link rel="stylesheet" type="text/css" media="all" href="<?php $this->options->themeUrl('css/main.css'); ?>" />
     <link rel="icon" href="<?php echo $this->options->icon ?>">
-    <link href="<?php $this->options->themeUrl('css/mdui.min.css'); ?>" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/mdui/0.4.1/css/mdui.min.css" rel="stylesheet">
     <script type="text/javascript" src="<?php $this->options->themeUrl('js/jquery-3.3.1.min.js'); ?>"></script>
     <script type="text/javascript" src="<?php $this->options->themeUrl('js/main.js'); ?>"></script>
     <script src="<?php $this->options->themeUrl('js/jquery.pjax.min.js'); ?>" type="text/javascript"></script>
-    <script src="<?php $this->options->themeUrl('js/mdui.min.js'); ?>" type="text/javascript"></script>
+    <script src="https://cdn.bootcss.com/mdui/0.4.1/js/mdui.min.js"></script>
     <?php $this->header(); ?>
 </head>
 <body>
@@ -63,6 +63,7 @@
     </script>
 </header>
 <div class="bg-ovo"></div>
+
 <script>
   logo = '<?php echo $this->options->logo ?>';
     bgurl = '<?php echo $this->options->bgUrl ?>';
