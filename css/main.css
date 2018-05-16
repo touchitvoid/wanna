@@ -1052,6 +1052,9 @@ footer {
 .tellYou > .sibi > .nextPrev {
     display: none;
 }
+::-webkit-scrollbar {
+	display:none;
+}
 
 @media screen and (max-width: 600px){
     .archives ul {
