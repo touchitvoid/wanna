@@ -28,7 +28,7 @@
         <button class="mdui-ripple mdui-btn shadow-1 payBtn" mdui-dialog="{target: '#payImg'}">
             <i class="mdui-icon material-icons" style="font-size: 18px">favorite</i> 赞赏
     </div>
-    <div class="mdui-dialog" id="payImg">
+    <div class="mdui-dialog justCenter" id="payImg">
         <img src='<?php echo $this->options->pay ?>' width="100%" />
     </div>
 </div>

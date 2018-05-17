@@ -538,6 +538,10 @@ footer {
     width: 155px;
     background-image: linear-gradient(to right,lightskyblue,pink);
 }
+#payImg {
+    max-width: 400px;
+    max-height: 600px;
+}
 .pageContent > p > img {
     max-width: 30em;
     margin: 0 auto;
