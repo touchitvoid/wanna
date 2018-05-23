@@ -1,8 +1,30 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
-<footer>
-    theme: <a href="http://icry.info/" style="color: deeppink;">wanna</a> 安稳的运行了<?php getBuildTime($this->options->start_time) ?>
+<footer class="mdui-container-fluid shadow-1">
+    <div class="mdui-row">
+        <div class="mdui-col-md-4">
+            <p>Powered by <a href="http://icry.info/">Void</a></p>
+            <p>Theme: <a href="http://icry.info/">typecho-theme-wanna</a></p>
+        </div>
+        <div class="mdui-col-md-4">
+            <div id="yy520"></div>
+            <p>
+                Copyright © 2018 Void Blog
+            </p>
+        </div>
+    </div>
     <script>
+        fetch('https://v1.hitokoto.cn')
+            .then(function (res){
+                return res.json();
+            })
+            .then(function (data) {
+                var hitokoto = document.getElementById('yy520');
+                hitokoto.innerText = data.hitokoto;
+            })
+            .catch(function (err) {
+                console.error(err);
+            });
         $(document).pjax('#body a,#header a','#body',{
             fragment: '#body',
             timeout : '50000'

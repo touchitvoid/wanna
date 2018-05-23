@@ -36,7 +36,7 @@ $this->need('header.php');
                     <div class="cardContent">
                         <div class="mdui-typo">
                             <h4><?php $this->title() ?></h4>
-                            <div style="margin-bottom: 10px">
+                            <div style="margin-bottom: 10px;line-height: 1.5em">
                                 作者：<a><?php $this->author(); ?></a>&nbsp
                                 时间：<a><?php $this->date('Y / F j'); ?></a>&nbsp
                                 标签：<a><?php $this->category(','); ?></a>
@@ -156,29 +156,4 @@ $this->need('header.php');
             </div>
         </div>
     </div>
-
-    <script>
-        foo = false;
-        $(window).scroll(function () {
-            var sS = document.documentElement.scrollTop;
-            var sSs = window.innerHeight;
-            var ssr = sS+sSs;
-            var sH = document.documentElement.scrollHeight;
-            if (ssr === sH && foo == false){
-                $('footer').stop(true,false).animate({
-                    opacity : '1',
-                    bottom : '0'
-                },function () {
-                    foo = true;
-                })
-            }else if (ssr < (sH-60) && foo == true){
-                $('footer').stop(true,false).animate({
-                    opacity : '0',
-                    bottom : '-50px'
-                },function () {
-                    foo = false;
-                })
-            }
-        })
-    </script>
 <?php $this->need('footer.php'); ?>

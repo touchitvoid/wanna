@@ -471,18 +471,35 @@ header {
 
 /* footer */
 footer {
-    width: 100%;
-    height: 50px;
-    position: fixed;
+    min-height: 120px;
+    padding: 16px 0;
     background: white;
     color: rgba(0,0,0,.65);
-    bottom: -50px;
     line-height: 50px;
     text-align: center;
     font-size: 14px;
     letter-spacing: 1px;
-    z-index: 999;
-    opacity: 0;
+}
+footer p {
+    line-height: 1.7em;
+}
+footer a {
+    color: deeppink;
+}
+footer > div > div {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+#yy520 {
+    width: 100%;
+    text-align: center;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    padding: 0 12px;
 }
 
 /* PAGE */
@@ -1076,10 +1093,10 @@ footer {
     /* 侧边栏适配方案 */
     .control {
         width: 100% !important;
-        padding-bottom: 70px !important;
         min-height: 450px;
         border-radius: 0 !important;
         opacity: 1 !important;
+        padding-bottom: 5px;
     }
     .blogBody {
         margin-bottom: 0 !important;
@@ -1176,6 +1193,9 @@ footer {
     .taptap > div {
         width: 100%;
     }
+    .taptap > div > span {
+        margin-right: 3px;
+    }
     .pageDataRight {
         float: none;
         text-align: left;
@@ -1216,6 +1236,12 @@ footer {
     }
     body {
         padding-top: 0;
+    }
+    footer {
+        min-height: 105px;
+    }
+    footer > div > div {
+        height: auto;
     }
     #body {
         padding-top: 60px;
@@ -1261,9 +1287,6 @@ footer {
     }
 }
 @media screen and (max-width: 1240px){
-    .vBox {
-        width: 100%;
-    }
     .pageTag {
         width: 100%;
     }
