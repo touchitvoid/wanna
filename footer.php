@@ -29,7 +29,11 @@
             fragment: '#body',
             timeout : '50000'
         });
+        $(document).off('pjax:send').on('pjax:send',function () {
+           $('.pjax-load').css({display:'flex'});
+        });
         $(document).off('pjax:complete').on('pjax:complete',function () {
+            $('.pjax-load').css({display:'none'});
             mdui.mutation();
             reload();
         })

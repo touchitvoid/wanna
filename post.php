@@ -1,7 +1,12 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
 
-<div class="mdui-container pageBody shadow-2 borR5px">
+<style>
+    #body {
+        display: block !important;
+    }
+</style>
+<div class="mdui-container pageBody shadow-2 borR5px" style="margin: 0 auto; margin-top: 20px">
     <div class="mdui-typo pageHead">
         <h3><?php $this->title() ?></h3>
         <div class="taptap">

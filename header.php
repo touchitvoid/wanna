@@ -15,6 +15,10 @@
     <?php $this->header(); ?>
 </head>
 <body>
+<div class="pjax-load">
+    <img src="<?php $this->options->themeUrl('img/load.gif'); ?>">
+    <h3 style="margin-top: 15px;color: white;">Loading...</h3>
+</div>
 <header id="header">
     <ul class="header-tab-1">
          <li class="mdui-ripple"><a href="<?php $this->options->siteUrl(); ?>">主页</a></li>

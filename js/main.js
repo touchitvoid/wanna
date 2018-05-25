@@ -91,17 +91,13 @@ function reload() {
     });
     PageReload();
     $('.page-navigator > li').click(function () {
-        sa = $(this);
-        $('body,html').animate({
-            scrollTop : '0'
-        },300,function () {
+
             $.pjax({
-                url : sa.find('a').attr('href'),
+                url : $(this).find('a').attr('href'),
                 container : '#qwq',
                 fragment: '#qwq',
                 timeout : '50000'
             })
-        })
     });
 }
 function PageReload() {
@@ -127,7 +123,4 @@ function an_rotate(obj,xy,data,ms) {
     var e = document.getElementById(obj);
     e.style.transition="-webkit-transform "+ms+" ease-out";
     e.style.webkitTransform="rotate"+xy+"("+data+"deg) scale(1)";
-}
-function clearAn(event) {
-    $(event).removeAttr('style');
 }
