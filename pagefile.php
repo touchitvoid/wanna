@@ -32,7 +32,7 @@
                 $mon = $mon_tmp;
                 $output .= '<li><span class="pf_mon">'. $mon .' 月</span><ul class="pf_post_list">'; //输出月份
             }
-            $output .= '<li>'.date('d日 h:i：',$archives->created).'<a href="'.$archives->permalink .'">'. $archives->title .'</a>  </li>'; //输出文章日期和标题
+            $output .= '<li><p>'.date('d日 h:i：',$archives->created).'</p>'.'<a href="'.$archives->permalink .'">'. $archives->title .'</a>  </li>'; //输出文章日期和标题
             // <em>('. $archives->commentsNum.')</em>
 
         endwhile;

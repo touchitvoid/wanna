@@ -36,10 +36,11 @@
     </div>
     <div class="v-menu-assembly-2">
         <ul class="vMenu-item-list">
-           <a href="<?php echo $this->options->pageFile; ?>"><li class="mdui-ripple">归档</li></a>
-            <a><li class="mdui-ripple">工具</li></a>
+            <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+            <?php while($pages->next()): ?>
+                <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><li class="mdui-ripple"><?php $pages->title(); ?></li></a>
+            <?php endwhile; ?>
             <a href="<?php $this->options->feedUrl(); ?>"><li class="mdui-ripple">RSS</li></a>
-            <a href="https://github.com/touchitvoid"><li class="mdui-ripple">Github</li></a>
         </ul>
     </div>
 </div>

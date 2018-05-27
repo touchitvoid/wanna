@@ -22,9 +22,18 @@
 <header id="header">
     <ul class="header-tab-1">
          <li class="mdui-ripple"><a href="<?php $this->options->siteUrl(); ?>">主页</a></li>
-         <li class="mdui-ripple"><a href="<?php echo $this->options->messageUrl; ?>">留言</a></li>
-         <li class="mdui-ripple"><a href="<?php echo $this->options->friendUrl; ?>">友链</a></li>
-         <li class="mdui-ripple"><a>关于</a></li>
+        <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+        <?php while($pages->next()): ?>
+            <li class="mdui-ripple typ-item"><a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a></li>
+        <?php endwhile; ?>
+        <li class="mobie-head-search justCenter">
+                <form class="m-s-input" action="" method="post">
+                    <input type="text" name="s" placeholder="输入搜索关键字" />
+                    <button class="justCenter btnclearDcss">
+                        <i class="mdui-icon material-icons" style="font-size: 22px;color: gray;">search</i>
+                    </button>
+                </form>
+        </li>
     </ul>
     <ul class="header-tab-1 header-tab-2" >
         <?php if($this->user->hasLogin()): ?>
@@ -49,16 +58,16 @@
         var mh = $('.mobie-head');
         $('#open-hMenu').click(function () {
             if (switchNow == 0){
-                animateFor('header','menuBackTop','menuBackZero');
+                an_Move('header','0','160px','400ms');
                 animateFor('#controlBtn','controlBtnSB','controlBtnSS');
-                $('#controlBtn').find('i').eq(1).text('close').css({color: 'rgba(0,0,0,.45)'});
+                $('#controlBtn').find('i').eq(1).text('close');
                 mh.css({display: 'none'});
                 $('#open-Vmenu').attr('disabled',true);
                 switchNow = 1;
             }else {
-                animateFor('header','menuBackZero','menuBackTop');
+                an_Move('header','0','0','400ms');
                 animateFor('#controlBtn','controlBtnSS','controlBtnSB');
-                $('#controlBtn').find('i').eq(1).text('menu').css({color: 'white'});
+                $('#controlBtn').find('i').eq(1).text('menu');
                 mh.css({display: 'block'});
                 $('#open-Vmenu').attr('disabled',false);
                 switchNow = 0;

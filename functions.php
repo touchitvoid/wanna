@@ -8,12 +8,6 @@ function themeConfig($form) {
     $form->addInput($logo);
     $icon = new Typecho_Widget_Helper_Form_Element_Text('icon', NULL, NULL, _t('网站图标'), _t('填入外部链接来更新icon'));
     $form->addInput($icon);
-    $friendUrl = new Typecho_Widget_Helper_Form_Element_Text('friendUrl', NULL, NULL, _t('友链页面url'), _t('新建独立页面时指定的链接'));
-    $form->addInput($friendUrl);
-    $pageFile = new Typecho_Widget_Helper_Form_Element_Text('pageFile', NULL, NULL, _t('归档页面url'), _t('新建独立页面时指定的链接'));
-    $form->addInput($pageFile);
-    $messageUrl = new Typecho_Widget_Helper_Form_Element_Text('messageUrl', NULL, NULL, _t('留言页面url'), _t('新建独立页面时指定的链接'));
-    $form->addInput($messageUrl);
     $start_time = new Typecho_Widget_Helper_Form_Element_Text('start_time', NULL, NULL, _t('博客运行时间记录（开始时间）'), _t('格式 2018-04-10 00:00:00 务必一致'));
     $form->addInput($start_time);
     $pay = new Typecho_Widget_Helper_Form_Element_Text('pay', NULL, NULL, _t('赞赏二维码'), _t('推荐支付宝or微信二维码'));

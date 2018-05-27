@@ -35,7 +35,9 @@ $this->need('header.php');
                     </div>
                     <div class="cardContent">
                         <div class="mdui-typo">
-                            <h4><?php $this->title() ?></h4>
+                            <div class="pageTitle">
+                                <h4><?php $this->title() ?></h4>
+                            </div>
                             <div style="margin-bottom: 10px;line-height: 1.5em">
                                 作者：<a><?php $this->author(); ?></a>&nbsp
                                 时间：<a><?php $this->date('Y / F j'); ?></a>&nbsp
@@ -62,7 +64,7 @@ $this->need('header.php');
                 <?php endwhile; ?><!--循环输出文章-->
                 <div class="nav-position">
                     <div class="nav">
-                        <?php $this->pageNav('<i class="mdui-icon material-icons">keyboard_arrow_left</i>', '<i class="mdui-icon material-icons">&#xe315;</i>'); ?>
+                        <?php $this->pageNav('<i class="mdui-icon material-icons">keyboard_arrow_left</i>', '<i class="mdui-icon material-icons">&#xe315;</i>',0, '...', 'wrapTag=ul&wrapClass=page-navigator&itemTag=li&textTag=span&tClass=current&prevClass=prev&nextClass=next'); ?>
                     </div>
                 </div>
             </div>
@@ -124,7 +126,7 @@ $this->need('header.php');
                                 </div>
                                 <div class="tabCard">
                                     <?php
-                                    $recent = $this->widget('Widget_Contents_Post_Recent','pageSize=10');
+                                    $recent = $this->widget('Widget_Contents_Post_Recent','pageSize=5');
                                     if($recent->have()):
                                         while($recent->next()):
                                             ?>

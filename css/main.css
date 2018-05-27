@@ -110,7 +110,6 @@ body,html {height: 100%}
 #body > .mdui-container:first-child , .mdui-container-fluid:first-child {
     flex: 1 0 auto;
     color: gray;
-    margin: 0 !important;
 }
 /* header */
 header {
@@ -126,6 +125,20 @@ header {
     padding-left: 220px;
     z-index: 99;
 }
+.mobie-head-search {
+    height: 50px;
+    display: none;
+}
+.m-s-input {
+    height: 35px;
+    width: 90%;
+    display: flex;
+    background: white;
+    box-shadow: 0 0 1px rgba(0,0,0,.15);
+}
+ .m-s-input > input {flex: 1;box-sizing: border-box;padding-left: 16px;outline: none;border: none;border-radius: 30px 0 0 30px;color: gray;}
+ .m-s-input > button {flex-basis: 40px}
+
 .right-pageTagMenu {
     margin-left: 3%;
 }
@@ -204,6 +217,14 @@ header {
     min-height: 205px;
     position: relative;
     display: inline-block;
+}
+.pageTitle {
+    max-width: 100%;
+}
+.pageTitle > h4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .cardImage {
     overflow: hidden;
@@ -306,6 +327,9 @@ header {
     align-items: center;
     justify-content: center;
     height: 30px;
+}
+.page-navigator > .current > a {
+    color: rgba(0,0,0,.85) !important;
 }
 .page-navigator > li {
     display: inline-block;
@@ -820,22 +844,6 @@ header {
     list-style: none;
 }
 /* animate */
-.menuBackTop {
-     animation: menuBack 0.4s;
-     animation-fill-mode : forwards;
- }
-@keyframes menuBack {
-    0% {transform: translate(0,250px)}
-    100% {transform: translate(0,0)}
-}
-.menuBackZero {
-    animation: menuZero 0.4s;
-    animation-fill-mode : forwards;
-}
-@keyframes menuZero {
-    0% {transform: translate(0,0)}
-    100% {transform: translate(0,250px)}
-}
 .controlBtnSS {
      animation: cbss 0.45s;
      animation-fill-mode : forwards;
@@ -1005,6 +1013,7 @@ header {
 /* pagefile */
 .pagefile-body {
     color: rgba(0,0,0,.45);
+    flex: 1 0 auto;
 }
 .pagefile-body li {
     list-style: none;
@@ -1022,6 +1031,15 @@ header {
     position: relative;
     margin: 16px 0;
     list-style: none;
+}
+.pf_post_list > li p {
+    min-width: 90px;
+    margin: 0 !important;
+}
+.pf_post_list > li a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* friend-links */
@@ -1131,6 +1149,7 @@ header {
         border-radius: 0 !important;
         opacity: 1 !important;
         padding-bottom: 5px;
+        padding-top: 32px;
     }
     .blogBody {
         margin-bottom: 0 !important;
@@ -1160,6 +1179,9 @@ header {
         height: auto !important;
     }
     /* header适配方案 */
+    .header-tab-1:first-child {
+        padding-top: 10px;
+    }
     .header-tab-1 > li {
         float: none !important;
     }
@@ -1167,14 +1189,19 @@ header {
         text-align: right;
         float: none !important;
     }
+    .typ-item {
+        display: none;
+    }
+    .header-tab-1 > li > a {
+        color: white !important;
+    }
     header {
         z-index: 1000;
         position: fixed;
-        top: -250px;
-        background-color: white !important;
+        top: -160px;
+        background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%) !important;
         padding: 0;
         right: 0;
-        background: url("../img/menuBottom-bg.png") no-repeat center -100px / cover;
     }
     #controlBtn {
         box-sizing: border-box;
@@ -1299,6 +1326,17 @@ header {
     #newFriend {
         right: 16px;
     }
+
+    .search {
+        display: none;
+    }
+    .control-border {
+        display: none;
+    }
+    .mobie-head-search {
+        display: flex;
+    }
+
 }
 @media screen and (max-width: 1550px){
     .control {
