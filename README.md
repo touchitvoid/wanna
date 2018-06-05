@@ -8,6 +8,7 @@
 
 使用方法
 
+
 将主题文件夹命名为wanna(很重要，不然缩略图会有问题)
 放到typecho目录下 usr/themes 
 
