@@ -103,7 +103,7 @@ $this->need('header.php');
                                             <?php
                                             $pageSizes = 6;
                                             if ($this->options->comNum !== '') {
-                                                $pageSize = $this->options->comNum;
+                                                $pageSizes = $this->options->comNum;
                                             }
                                             $this->widget('Widget_Comments_Recent','pageSize='.$pageSizes)->to($comments);
                                             ?>
