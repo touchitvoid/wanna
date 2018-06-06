@@ -12,8 +12,15 @@ function themeConfig($form) {
     $form->addInput($start_time);
     $pay = new Typecho_Widget_Helper_Form_Element_Text('pay', NULL, NULL, _t('赞赏二维码'), _t('推荐支付宝or微信二维码'));
     $form->addInput($pay);
-    $comNum = new Typecho_Widget_Helper_Form_Element_Text('comNum', NULL, NULL, _t('最新评论列表展示条数'), _t('默认最新6条评论'));
-    $form->addInput($comNum);
+    $comNum = new Typecho_Widget_Helper_Form_Element_Select('comNum', array(
+        '6'=>'默认',
+        '7'=>'7',
+        '8'=>'8',
+        '9'=>'6',
+        '10'=>'10'
+    ),'6',
+        _t('最新评论调用条数'),_t('默认6'));
+    $form->addInput($comNum->multiMode());
 
     $comSize = new Typecho_Widget_Helper_Form_Element_Select('comSize', array(
         '8'=>'小号',

@@ -101,15 +101,11 @@ $this->need('header.php');
                                     <div class="boaCon marCenter">
                                         <ul class="reply-comments">
                                             <?php
-                                            $pageSizes = 6;
-                                            if ($this->options->comNum !== '') {
-                                                $pageSizes = $this->options->comNum;
-                                            }
-                                            $this->widget('Widget_Comments_Recent','pageSize='.$pageSizes)->to($comments);
+                                            $this->widget('Widget_Comments_Recent','pageSize='.Typecho_Widget::widget('Widget_Options')->comNum)->to($comments);
                                             ?>
                                             <?php while($comments->next()): ?>
                                                 <li>
-                                                    <?php $comments->gravatar('53', ''); ?>
+                                                    <?php $comments->gravatar('54', ''); ?>
                                                     <div class="newCom-data">
                                                         <h6><?php $comments->author(false); ?></h6>
                                                         <p><?php $comments->excerpt(15, '...'); ?></p>
