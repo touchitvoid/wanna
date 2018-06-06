@@ -101,18 +101,18 @@ $this->need('header.php');
                                     <div class="boaCon marCenter">
                                         <ul class="reply-comments">
                                             <?php
-                                            $pageSize = 6;
-                                            if ($this->options->comNum !== ''){
+                                            $pageSizes = 6;
+                                            if ($this->options->comNum !== '') {
                                                 $pageSize = $this->options->comNum;
                                             }
-                                            $this->widget('Widget_Comments_Recent','pageSize='.$pageSize)->to($comments);
+                                            $this->widget('Widget_Comments_Recent','pageSize='.$pageSizes)->to($comments);
                                             ?>
                                             <?php while($comments->next()): ?>
                                                 <li>
                                                     <?php $comments->gravatar('53', ''); ?>
                                                     <div class="newCom-data">
                                                         <h6><?php $comments->author(false); ?></h6>
-                                                        <p><?php $comments->excerpt(18, '...'); ?></p>
+                                                        <p><?php $comments->excerpt(15, '...'); ?></p>
                                                         <a href="<?php $comments->permalink(); ?>" class="com-readmore">
                                                             <button class="mdui-btn mdui-btn-icon mdui-ripple">
                                                                 <i class="mdui-icon material-icons" style="color: rgba(0,0,0,.3);font-size: 22px">message</i>

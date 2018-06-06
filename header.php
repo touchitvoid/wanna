@@ -21,11 +21,11 @@
 </div>
 <header id="header">
     <ul class="header-tab-1">
-         <li class="mdui-ripple"><a href="<?php $this->options->siteUrl(); ?>">主页</a></li>
-        <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
-        <?php while($pages->next()): ?>
-            <li class="mdui-ripple typ-item"><a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a></li>
-        <?php endwhile; ?>
+        <li class="mdui-ripple">
+            <a href="<?php $this->options->siteUrl(); ?>">
+                <?php $this->options->title() ?>
+            </a>
+        </li>
         <li class="mobie-head-search justCenter">
                 <form class="m-s-input" action="" method="post">
                     <input type="text" name="s" placeholder="输入搜索关键字" />
@@ -62,14 +62,14 @@
                 animateFor('#controlBtn','controlBtnSB','controlBtnSS');
                 $('#controlBtn').find('i').eq(1).text('close');
                 mh.css({display: 'none'});
-                $('#open-Vmenu').attr('disabled',true);
+                $('#open-Vmenu').css({display : 'none'});
                 switchNow = 1;
             }else {
                 an_Move('header','0','0','400ms');
                 animateFor('#controlBtn','controlBtnSS','controlBtnSB');
                 $('#controlBtn').find('i').eq(1).text('menu');
                 mh.css({display: 'block'});
-                $('#open-Vmenu').attr('disabled',false);
+                $('#open-Vmenu').css({display : 'inline-block'});
                 switchNow = 0;
             }
         });

@@ -205,11 +205,11 @@ header {
     width: 90%;
     margin: 0 auto;
     position: relative;
-    background: white;
     min-height: 200px;
     margin-top: 30px;
     display: flex;
     overflow: hidden;
+   background: white;
     border-radius: 5px;
 }
 .pageTag > div {
@@ -328,9 +328,6 @@ header {
     justify-content: center;
     height: 30px;
 }
-.page-navigator > .current > a {
-    color: rgba(0,0,0,.85) !important;
-}
 .page-navigator > li {
     display: inline-block;
     height: 100%;
@@ -341,7 +338,7 @@ header {
     transition: all .5s;
 }
 .page-navigator > li:hover {
-    background: rgba(0,0,0,.1);
+    background: rgba(0,0,0,.05);
 }
 .page-navigator > li > a {
     position: relative;
@@ -350,15 +347,18 @@ header {
     text-decoration: none;
     color: rgba(0,0,0,.5);
 }
+.page-navigator > .current > a {
+    color: rgba(0,0,0,.8);
+}
 .nav-position {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .nav {
-    background-color: hsla(0,0%,100%,.15);
+    background-color: hsla(0,0%,100%,.2);
     display: inline-block;
     border-radius: 3px;
     transition: all .75s;
@@ -372,7 +372,7 @@ header {
 .control {
     border-radius: 5px;
     width: 90%;
-    min-width: 280px;
+    min-width: 320px;
     min-height: 500px;
     margin-top: 30px;
     padding: 20px 18px;
@@ -427,6 +427,16 @@ header {
 }
 .searchData > h3 {
     color: white !important;
+}
+.searchData .nav > ul {
+    margin-bottom: 0;
+    padding-left: 0;
+}
+.searchData .nav a {
+    z-index: 1;
+}
+#search-list-nav {
+    margin-top: 30px;
 }
 @keyframes scearchInfo {
     0% {width: 0}
@@ -488,6 +498,7 @@ header {
     padding-left: 0.3em !important;
 }
 .newCom-data {
+    width: 100%;
     height: 50px;
     padding-top: 5px;
     display: flex;
@@ -497,8 +508,9 @@ header {
    margin: 0 !important;
 }
 .newCom-data > p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-size: 13px;
-    word-break: break-word;
 }
 .com-readmore {
     position: absolute !important;
@@ -718,39 +730,42 @@ header {
     position: absolute;
     right:12px;
     bottom: 12px;
-    height: 40px;
     box-sizing: border-box;
-    display: flex;
     align-items: center;
     border-radius: 3px;
 }
 .nextPrev > div {
-    flex: 1;
     text-align: center;
     padding: 0 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    white-space: nowrap;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    position: relative;
+}
+.nextPrev > div:first-child:after {
+    content: '';
+    width: 3px;
+    height: 12px;
+    background: #8ec5fc;
+    position: absolute;
+    right: -3px;
+    z-index: 99;
+    top: 14px;
 }
 .nextPrev > div > i {
     font-size: 22px;
-    margin: 0 12px;
 }
 .nextPrev > div > a {
-    display: block;
-    width: 100%;
-    height: 100%;
+    display: inline-block;
+    width: 70%;
+    line-height: 40px;
     text-decoration: none;
     letter-spacing: 1px;
     color: gray;
-}
-#theFlexBor {
-    width: 3px;
-    height: 10px;
-    background: pink;
-    margin: 0 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .userBB {
     width: 100%;
@@ -864,21 +879,23 @@ header {
 /* 搜索结果 */
 .searchData {
     color: rgba(0,0,0,.45);
+    margin-bottom: 30px;
 }
 .colorHi {
-    width: 90%;
-    height: 2px;
-    margin: 12px auto;
-    background: pink;
+    width: 100%;
+    height: 200px;
+    margin-top: 14px;
+    position: relative;
 }
+.colorHi > .cardImage-img {position: relative;box-shadow: 0 2px 10px rgb(0,0,0,.25);border-radius: 3px}
 .s-data-card {
     margin-top: 20px;
 }
 .s-data-card-con {
-    width: 98%;
+    width: 100%;
     background: white;
     border-radius: 3px;
-    padding: 0 24px !important;
+    padding: 0 22px !important;
     padding-bottom: 30px !important;
     padding-top: 8px !important;
     margin: 0 auto;
@@ -972,7 +989,7 @@ header {
 }
 .vMenu-item-list {
     position: relative;
-    top: 250px;
+    top: 225px;
     text-align: center;
 }
 .vMenu-item-list > a > li {
@@ -988,6 +1005,9 @@ header {
     display: none;
     width: 70%;
     height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     position: absolute;
     bottom: 0;
     z-index: 99;
@@ -1069,8 +1089,8 @@ header {
     width: auto;
 }
 .linkCon > img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     margin-right: 10px;
     background-color: rgba(0,0,0,.15);
     border-radius: 50%;
@@ -1308,9 +1328,6 @@ header {
         padding-top: 60px;
         padding-right: 0 !important;
     }
-    .nextPrev {
-        max-width: 90%;
-    }
 
     .linksCard {
         width: 100%;
@@ -1337,6 +1354,8 @@ header {
         display: flex;
     }
 
+    .nextPrev {width: 100%;right: 0%;text-align: center}
+
 }
 @media screen and (max-width: 1550px){
     .control {
@@ -1347,15 +1366,17 @@ header {
     }
 }
 @media screen and (max-width: 1022px){
-    #body {
-        box-sizing: border-box;
-        padding-right: 50px;
-    }
     .right-pageTagMenu {
         margin-left: 0;
     }
     .blogBody-pos {
         left: 0 !important;
+    }
+}
+@media screen and (max-width: 1070px){
+    #body {
+        box-sizing: border-box;
+        padding-right: 50px;
     }
 }
 @media screen and (max-width: 1240px){
