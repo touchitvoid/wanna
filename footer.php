@@ -25,7 +25,7 @@
             .catch(function (err) {
                 console.error(err);
             });
-        $(document).pjax('#body a,#header a','#body',{
+        $(document).pjax('#body a,#header a,#vMenu a','#body',{
             fragment: '#body',
             timeout : '50000'
         });
