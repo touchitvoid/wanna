@@ -4,6 +4,7 @@
     <div class="mdui-row">
         <div class="mdui-col-md-4">
             <p>Powered by <a href="http://icry.info/">Void</a></p>
+            <p><?php getBuildTime(Typecho_Widget::widget('Widget_Options')->start_time);  ?></p>
             <p>Theme: <a href="http://icry.info/">typecho-theme-wanna</a></p>
         </div>
         <div class="mdui-col-md-4">
