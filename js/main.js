@@ -1,17 +1,5 @@
 window.onload = function () {
     reload();
-    $(document).scroll(function () {
-        scr_Height =  document.documentElement.scrollTop;
-        if (scr_Height > 100) {
-            $('#header').css({
-                backgroundColor : 'hsla(0,0%,100%,.9)'
-            });
-        }else {
-            $('#header').css({
-                backgroundColor : 'hsla(0,0%,100%,.4)'
-            })
-        }
-    })
 };
 function reload() {
     $('.flexTag').click(function () {
