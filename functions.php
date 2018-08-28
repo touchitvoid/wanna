@@ -4,14 +4,22 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function themeConfig($form) {
     $bgUrl = new Typecho_Widget_Helper_Form_Element_Text('bgUrl', NULL, NULL, _t('主题背景图片'), _t('填入外部链接来更新背景图片 , 默认使用 bg.jpg'));
     $form->addInput($bgUrl);
+
+    $hIcon = new Typecho_Widget_Helper_Form_Element_Text('hIcon', NULL, NULL, _t('顶栏logo'), _t('填入外部链接来更新顶栏logo , 不填写则不会出现'));
+    $form->addInput($hIcon);
+
     $logo = new Typecho_Widget_Helper_Form_Element_Text('logo', NULL, NULL, _t('侧边栏Logo'), _t('填入外部链接来更新Logo'));
     $form->addInput($logo);
+
     $icon = new Typecho_Widget_Helper_Form_Element_Text('icon', NULL, NULL, _t('网站图标'), _t('填入外部链接来更新icon'));
     $form->addInput($icon);
+
     $start_time = new Typecho_Widget_Helper_Form_Element_Text('start_time', NULL, NULL, _t('博客运行时间记录（开始时间）'), _t('格式 2018-04-10 00:00:00 务必一致'));
     $form->addInput($start_time);
+
     $pay = new Typecho_Widget_Helper_Form_Element_Text('pay', NULL, NULL, _t('赞赏二维码'), _t('推荐支付宝or微信二维码'));
     $form->addInput($pay);
+
     $comNum = new Typecho_Widget_Helper_Form_Element_Select('comNum', array(
         '6'=>'默认',
         '7'=>'7',
@@ -22,13 +30,6 @@ function themeConfig($form) {
         _t('最新评论调用条数'),_t('默认6'));
     $form->addInput($comNum->multiMode());
 
-    $comSize = new Typecho_Widget_Helper_Form_Element_Select('comSize', array(
-        '8'=>'小号',
-        '9'=>'中号',
-        '10'=>'大号'
-    ),'8',
-        _t('评论卡片大小'),_t('默认最小'));
-    $form->addInput($comSize->multiMode());
 
     $slimg = new Typecho_Widget_Helper_Form_Element_Select('slimg', array(
         'showon'=>'有图文章显示缩略图，无图文章随机显示缩略图',

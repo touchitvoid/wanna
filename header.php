@@ -19,61 +19,30 @@
     <img src="<?php $this->options->themeUrl('img/load.gif'); ?>">
     <h3 style="margin-top: 15px;color: white;">Loading...</h3>
 </div>
-<header id="header">
-    <ul class="header-tab-1">
-        <li class="mdui-ripple">
-            <a href="<?php $this->options->siteUrl(); ?>">
-                <?php $this->options->title() ?>
+<header>
+    <div id="header">
+        <a id="wsTitle" class="mdui-text-truncate" href="<?php $this->options->siteUrl(); ?>" style="flex: 1;background-image: url('<?php $this->options->hIcon() ?>')">
+            <?php $this->options->title() ?>
+        </a>
+        <form style="height: 100%">
+            <input type="text" style="display:none">
+            <input type="text" autocomplete="off" name="s" placeholder="回车进行搜索" id="search" />
+        </form>
+        <div class="header-tool">
+            <?php if($this->user->hasLogin()): ?>
+            <?php else: ?>
+            <a href="<?php $this->options->adminUrl(); ?>">
+                <button class="loginBtn mdui-ripple">登陆</button>
             </a>
-        </li>
-        <li class="mobie-head-search justCenter">
-                <form class="m-s-input" action="" method="post">
-                    <input type="text" name="s" placeholder="输入搜索关键字" />
-                    <button class="justCenter btnclearDcss">
-                        <i class="mdui-icon material-icons" style="font-size: 22px;color: gray;">search</i>
-                    </button>
-                </form>
-        </li>
-    </ul>
-    <ul class="header-tab-1 header-tab-2" >
-        <?php if($this->user->hasLogin()): ?>
-                    <li><a href="<?php $this->options->adminUrl(); ?>">欢迎回来 <?php $this->user->screenName(); ?></a></li>
-        <?php else: ?>
-            <li class="loginBtn"><a href="<?php $this->options->adminUrl(); ?>">Login<i class="mdui-icon material-icons">expand_more</i></a></li>
-        <?php endif; ?>
-                    <a href="<?php $this->options->siteUrl(); ?>">
-                        <li class="mobie-head"><?php $this->options->title() ?></li>
-                    </a>
-                    <li class="mdui-ripple" id="controlBtn">
-                        <button class="mb-btn" id="open-Vmenu">
-                            <i class="material-icons mdui-icon">details</i>
-                        </button>
-                        <button class="mb-btn mdui-ripple" id="open-hMenu">
-                            <i class="mdui-icon material-icons">menu</i>
-                        </button>
-                    </li>
-    </ul>
-    <script>
-        switchNow = 0;
-        var mh = $('.mobie-head');
-        $('#open-hMenu').click(function () {
-            if (switchNow == 0){
-                an_Move('header','0','160px','400ms');
-                animateFor('#controlBtn','controlBtnSB','controlBtnSS');
-                $('#controlBtn').find('i').eq(1).text('close');
-                mh.css({display: 'none'});
-                $('#open-Vmenu').css({display : 'none'});
-                switchNow = 1;
-            }else {
-                an_Move('header','0','0','400ms');
-                animateFor('#controlBtn','controlBtnSS','controlBtnSB');
-                $('#controlBtn').find('i').eq(1).text('menu');
-                mh.css({display: 'block'});
-                $('#open-Vmenu').css({display : 'inline-block'});
-                switchNow = 0;
-            }
-        });
-    </script>
+            <?php endif; ?>
+            <button class="noColorBtn mdui-ripple searchBtn">
+                <i class="mdui-icon material-icons">search</i>
+            </button>
+            <button class="noColorBtn mdui-ripple sidebarControlBtn">
+                <i class="mdui-icon material-icons">menu</i>
+            </button>
+        </div>
+    </div>
 </header>
 <div class="bg-ovo"></div>
 
@@ -82,7 +51,7 @@
     bgurl = '<?php echo $this->options->bgUrl ?>';
     if (bgurl == ''){
         bgurl = '/usr/themes/wanna/img/bg.jpg';
-    }
+  }
     if (logo == ''){
         logo = '/usr/themes/wanna/img/icon.jpg'
     }

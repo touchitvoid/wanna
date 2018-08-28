@@ -5,22 +5,32 @@
         padding-bottom: 30px;
         margin-bottom: 30px;
         flex: 1;
+        background: none;
+    }
+    .pageBody .vContainer {
+        background: white;
+        padding: 16px;
+        box-sizing: border-box;
     }
 </style>
-<div class="mdui-container pageBody shadow-2 borR5px">
-    <div class="mdui-typo pageHead">
-        <h3><?php $this->title() ?></h3>
-        <div class="taptap">
-            <div>
-                <span>浏览量：<a><?php get_post_view($this) ?></a></span>
-                <span><?php $this->date('Y / F j'); ?></span>
-                <a><?php $this->author() ?></a></span>
+<div class="mdui-container pageBody">
+    <div class="vContainer shadow-2 borR5px">'
+        <div class="mdui-row">
+            <div class="mdui-typo pageHead">
+                <?php $this->title() ?>
+                <div class="taptap">
+                    <div>
+                        <span>浏览量：<a><?php get_post_view($this) ?></a></span>
+                        <span><?php $this->date(); ?></span>
+                        <a><?php $this->author() ?></a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="mdui-divider" style="margin: 10px 0"></div>
+            <div class="mdui-typo pageContent">
+                <p><?php $this->content('Continue Reading...'); ?></p>
             </div>
         </div>
-    </div>
-    <div class="mdui-divider" style="margin: 10px 0"></div>
-    <div class="mdui-typo pageContent">
-        <p><?php $this->content('Continue Reading...'); ?></p>
     </div>
 </div>
 

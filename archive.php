@@ -31,7 +31,7 @@
                     </p>
                     <div class="mdui-divider" style="margin-bottom: 10px"></div>
                     <p>
-                        <?php $this->excerpt(30,'...'); ?>
+                        <?php $this->excerpt(20,'...'); ?>
                     </p>
                 </div>
             </article>

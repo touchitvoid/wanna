@@ -3,7 +3,7 @@
     margin: 0;
 }
 h1,h2,h3,h4,h5,h6 {
-    font-weight: 300 !important;
+    font-weight: 300;
 }
 a {
     text-decoration: none;
@@ -100,6 +100,8 @@ footer > div > div {
 
 body {
     padding-top: 80px;
+    padding-right: 220px;
+    transition: all .34s;
 }
 body,html {height: 100%}
 #body {
@@ -111,82 +113,83 @@ body,html {height: 100%}
     flex: 1 0 auto;
     color: gray;
 }
-/* header */
+
 header {
     width: 100%;
     position: fixed;
     top: 0;
-    right: 190px;
-    min-height: 50px;
+    right: 0;
+    height: 68px;
     box-sizing: border-box;
-    background-color: hsla(0,0%,100%,.4);
-    box-shadow: 0 1px 2px rgba(0,0,0,.1);
-    padding: 0 30px;
-    padding-left: 220px;
+    padding: 0 24px;
     z-index: 99;
+    padding-right: 244px;
+    padding-top: 6px;
+    transition: all .4s;
+    will-change: transform;
 }
-.mobie-head-search {
-    height: 50px;
-    display: none;
-}
-.m-s-input {
-    height: 35px;
-    width: 90%;
-    display: flex;
-    background: white;
-    box-shadow: 0 0 1px rgba(0,0,0,.15);
-}
- .m-s-input > input {flex: 1;box-sizing: border-box;padding-left: 16px;outline: none;border: none;border-radius: 30px 0 0 30px;color: gray;}
- .m-s-input > button {flex-basis: 40px}
-
-.right-pageTagMenu {
-    margin-left: 3%;
-}
-#controlBtn {
+#header {
     width: 100%;
-    height: 50px;
-    display: none;
-}
-#loginOutUrl {
-    padding-left: 0;
-}
-.header-tab-1 {
-    height: auto;
-    list-style: none;
+    height: 100%;
+    background-color: white;
     box-sizing: border-box;
+    padding: 0 24px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0,0,0,.24);
+    transition: all .35s;
 }
-.header-tab-1 > li {
-    float: left;
+#header form {
+    transition: all .3s;
 }
-.header-tab-1 > li > a {
-    line-height: 50px;
-    padding:0 20px;
-    cursor: pointer;
-    text-decoration: none;
-    color: rgba(0,0,0,.5);
+.searchBtn {display: none}
+#search {
+    width: 340px;
+    height: 100%;
+    border: none;
+    outline: none;
+    flex: 0 auto;
+    background: url("../img/search.png") no-repeat 20px center / 19px;
+    box-sizing: border-box;
+    padding-left: 48px;
+    padding-right: 24px;
+    color: rgba(0,0,0,.55);
+    font-size: 15px;
+    letter-spacing: 1px;
 }
-.header-tab-2 {
-    margin: 0;
-    float: right;
+#wsTitle {
+    display: flex;
+    align-items: center;
+    color: rgba(0,0,0,.55);
+    padding-left: 50px;
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    height: 100%;
+    font-weight: bold;
+    letter-spacing: 1px;
+    min-width: 100px;
 }
+.header-tool button{border: none;outline: none;height: 30px;margin-left: 18px;letter-spacing: 1px}
+.noColorBtn {background: transparent}
+.header-tool i {color:rgba(0,0,0,.35);font-size: 22px}
+.loginBtn {width: 135px;border-radius: 25px;
+    color: white;background-color:rgba(0,0,0,.6);box-shadow: 0 1px 5px rgba(0,0,0,.2)}
+
+.vContainer {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
 .blogBody {
     flex: 1 0 auto;
     color: gray;
-    margin: 0 !important;
-    margin-bottom: 50px;
     position: relative;
     overflow: hidden;
-}
-.blogBody-pos {
-    position: relative;
-}
-.vBox {
-    width: 90%;
-    margin: 0 auto;
-    min-height: 200px;
-    padding-bottom: 30px;
-    box-sizing: border-box;
-    position: relative;
+    margin: 0 !important;
+    margin-bottom: 50px;
 }
 .bg-ovo {
     width: 100%;
@@ -194,15 +197,13 @@ header {
     position: fixed;
     bottom: 0;
     left: 0;
-   background-size: cover;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(4px);
-    opacity: .8;
     z-index: -100;
 }
 .pageTag {
-    width: 90%;
+    width: 98%;
     margin: 0 auto;
     position: relative;
     min-height: 200px;
@@ -210,21 +211,13 @@ header {
     display: flex;
     overflow: hidden;
    background: white;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 .pageTag > div {
     width: 50%;
-    min-height: 205px;
+    min-height: 200px;
     position: relative;
     display: inline-block;
-}
-.pageTitle {
-    max-width: 100%;
-}
-.pageTitle > h4 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 .cardImage {
     overflow: hidden;
@@ -232,12 +225,39 @@ header {
 .cardContent {
     height: 200px;
     background: white;
-    padding-bottom: 34px;
+    padding: 16px;
+    padding-bottom: 36px;
     box-sizing: border-box;
-}.cardContent > .mdui-typo {
-     padding: 0 12px;
-     box-sizing: border-box;
- }
+}
+.pageCard-data,.pageCard-data a {
+    font-size: 14px;
+    color: rgba(0,0,0,.3);
+    text-transform:Uppercase;
+    font-weight: bold;
+}
+.pageCard-excerpt {
+    box-sizing: border-box;
+    padding: 16px 5px;
+}
+.pageTitle {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+.pageTitle > h4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 21px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #586677;
+}
+.pageCard-excerpt p {
+    color: rgba(0,0,0,.5);
+    letter-spacing: 1px;
+    font-size: 13px;
+    line-height: 1.38;
+}
 .cardImage-img {
     width: 100%;
     height: 100%;
@@ -286,8 +306,8 @@ header {
 .hiddenSquare {
     width: 0;
     height: 0;
-    border-bottom: 205px solid white;
-    border-left: 50px solid transparent;
+    border-bottom: 200px solid white;
+    border-left: 40px solid transparent;
     border-right: 0 solid transparent;
     position: absolute;
     right: 0;
@@ -295,30 +315,30 @@ header {
 .ovo {
     position: absolute;
     bottom: 0;
+    right: 0;
     width: 100%;
-    height: 34px;
-    padding: 0 12px;
+    height: 36px;
+    padding: 0 8px;
     box-sizing: border-box;
+    border-top: 1px solid rgba(0,0,0,.08);
+    line-height: 36px;
 }
+.ovo > a {color: rgba(23,135,255,.85)}
 .ovo-icon {
     width: auto;
     height: 100%;
     line-height: 34px;
-    font-size: 18px;
+    font-size: 17px;
     float: right;
 }
 .dataIcon {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 1px;
-    padding: 0 10px;
+    padding: 0 5px;
     float: right;
-}
-.dataIcon > i {
-    font-size: 18px;
-    color: palevioletred;
 }
 .page-navigator {
     list-style: none;
@@ -369,92 +389,23 @@ header {
     background-color: hsla(0,0%,100%,.4);
 }
 /* blogControl */
+.vBox {
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    width: 100%;
+}
 .control {
-    border-radius: 5px;
     width: 90%;
-    min-width: 320px;
-    min-height: 500px;
+    min-height: 450px;
+    margin: 0 auto;
     margin-top: 30px;
-    padding: 20px 18px;
+    padding: 16px;
     box-sizing: border-box;
     background-color: white;
-}
-
-/* 搜索样式重写 */
-.search {
-    width: 100%;
     border-radius: 3px;
-    box-sizing: border-box;
-    position: relative;
-    margin-bottom: 10px;
-    overflow: hidden;
+    padding-top: 24px;
 }
 
-.searchBtn {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    z-index: 3;
-    cursor: pointer;
-}
-.searchInput {
-    width: 100%;
-    height: 40px;
-    padding-left: 50px;
-    padding-right: 12px;
-    box-sizing: border-box;
-    border: none;
-    color: gray;
-    font-size: 15px;
-    letter-spacing: 1px;
-    outline: none;
-    position: relative;
-    background: transparent;
-    z-index: 2;
-    opacity: 0;
-}
-.searchColor {
-    width: 0;
-    height: 40px;
-    background: rgba(0,0,0,.025);
-    position: absolute;
-    border-radius: 0 20px 20px 0;
-    z-index: 1;
-}
-.searchIN {
-    animation: scearchInfo 0.75s;
-    animation-fill-mode: forwards;
-}
-.searchData > h3 {
-    color: white !important;
-}
-.searchData .nav > ul {
-    margin-bottom: 0;
-    padding-left: 0;
-}
-.searchData .nav a {
-    z-index: 1;
-}
-#search-list-nav {
-    margin-top: 30px;
-}
-@keyframes scearchInfo {
-    0% {width: 0}
-    100% {width: 100%;border-radius: 5px}
-}
-.searchOut {
-    animation: scearchOut 0.75s;
-    animation-fill-mode: forwards;
-}
-@keyframes scearchOut {
-    0% {width: 100%;border-radius: 5px}
-    100% {width: 0;border-radius: 0 20px 20px 0;}
-}
-
-.control-border {
-    width: 80%;
-    margin: 8px auto !important;
-}
 .sortBy {
     display: flex;
     position: relative;
@@ -483,7 +434,7 @@ header {
     /* 神奇的操作 */
 }
 .tabCard {
-    margin-top: 24px;
+    margin-top: 14px;
     display: none;
 }
 .firstTabCard {
@@ -506,30 +457,37 @@ header {
 }
 .newCom-data > h6 {
    margin: 0 !important;
+   line-height: 25px;
+   font-size: 16px;
 }
 .newCom-data > p {
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 13px;
+    font-size: 12px;
+    margin: 0 !important;
+    line-height: 25px;
 }
 .com-readmore {
     position: absolute !important;
     right: 0;
     top: 22px;
-    display: none;
+    display: block;
     opacity: 0;
+    color: rgba(0,0,0,.46);
+    font-size: 12px;
+    transition: all .3s;
+    transform: translate(-10px,0);
 }
 .reply-comments {
     margin: 0 !important;
 }
 .reply-comments > li:hover .com-readmore {
-    display: block;
     opacity: 1;
+    transform: translate(0,0);
 }
 .reply-comments > li {
-    padding: 7px;
+    padding: 7px 3px;
     position: relative;
-    padding-bottom: 10px;
     box-sizing: border-box;
     border-radius: 3px;
     display: flex;
@@ -543,7 +501,8 @@ header {
 .reply-comments > li > img {
     border-radius: 50%;
     margin-right: 8px;
-    border: 1px solid rgba(0,0,0,.05);
+    border: 2px solid white;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.2);
 }
 
 /* 最新文章 样式订正 */
@@ -552,9 +511,10 @@ header {
     height: auto;
     position: relative;
     margin: 0 auto;
-    margin-top: 24px;
+    margin-top: 18px;
     border-bottom: 1px solid rgba(0,0,0,.15);
-    padding: 12px 18px;
+    padding: 8px 18px;
+    padding-bottom: 10px;
     box-sizing: border-box;
     }.nextNewPage:after {
          content: '';
@@ -570,13 +530,40 @@ header {
                color: gray !important;
            }.nextNewPageData > i {
     font-size: 16px;
+    margin-right: 5px;
+    color:rgba(0,0,0,.35);
                        }
+.nextNewPage:last-child {border-bottom: none}
+.newPageTile {
+    line-height: 28px;
+    margin-bottom: 6px;
+}
+.newPageItem-Data {
+    font-size: 13px;
+}
+.nextNewPageData {
+    display: flex;
+    align-items: center;
+}
+
+/*classList*/
+.classList {
+    list-style: none;
+    box-sizing: border-box;
+    padding-left: 16px;
+}
+.classList li {
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+}
+.classList li a {color:rgba(0,0,0,.5);font-size: 16px}
+.classListItem-num {font-size: 12px}
 
 /* PAGE */
 .pageBody {
     padding: 16px;
-    padding-bottom: 80px;
-    min-height: 500px;
+    padding-bottom: 8px;
     position: relative;
     background: white;
     color: gray;
@@ -612,18 +599,17 @@ header {
 }
 .pageContent {
     padding: 0 35px;
+    min-height: 320px;
 }
 .pay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
     height: 80px;
 }
 .pay > button {
     color: white;
-    width: 155px;
+    width: 125px;
     background-image: linear-gradient(to right,lightskyblue,pink);
+    border-radius: 30px;
 }
 #payImg {
     max-width: 400px;
@@ -635,11 +621,11 @@ header {
 }
 .sibi {
     margin: 20px 0;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     min-height: 200px;
     padding: 12px;
+    padding-bottom: 36px;
     box-sizing: border-box;
-    padding-bottom: 120px;
     background: white;
     color: gray;
     position: relative;
@@ -651,9 +637,9 @@ header {
 }
 .getData-input {
     position: relative;
-    margin-right: 30px;
+    margin-right: 18px;
     margin-bottom: 12px;
-    height: 42px;
+    height: 38px;
     box-shadow: 0 0 3px rgba(0,0,0,.12);
     border-radius: 3px;
 }
@@ -718,47 +704,44 @@ header {
     position: relative;
     top: 24px;
 }
+.comFiled {padding: 0 16px;}
+.comFiled > div {
+    margin-top: 20px;
+    position: relative;
+}.comTool {
+    padding: 3px 12px;
+ }
 .newBB {
     box-sizing: border-box;
-    padding: 0 40px;
+    padding: 0 32px !important;
 }
+.smallSize {font-size: 12px}
 .comments > ol {
     padding-left: 0 !important;
 }
 .nextPrev {
-    min-width: 300px;
-    position: absolute;
-    right:12px;
-    bottom: 12px;
+    width: 100%;
     box-sizing: border-box;
-    align-items: center;
     border-radius: 3px;
+    display: flex;
+    margin-top: 8px;
 }
 .nextPrev > div {
     text-align: center;
-    padding: 0 12px;
-    width: 150px;
+    padding: 0 8px;
+    width: 50%;
     height: 40px;
     line-height: 40px;
-    display: inline-block;
+    display: flex;
     position: relative;
-}
-.nextPrev > div:first-child:after {
-    content: '';
-    width: 3px;
-    height: 12px;
-    background: #8ec5fc;
-    position: absolute;
-    right: -3px;
-    z-index: 99;
-    top: 14px;
+    align-items: center;
 }
 .nextPrev > div > i {
     font-size: 22px;
 }
 .nextPrev > div > a {
     display: inline-block;
-    width: 70%;
+    width: 100%;
     line-height: 40px;
     text-decoration: none;
     letter-spacing: 1px;
@@ -769,13 +752,19 @@ header {
 }
 .userBB {
     width: 100%;
-    margin-top: 8px;
-    border-radius: 4px;
-    box-shadow: 0 0 2px rgba(0,0,0,.2);
     position: relative;
     box-sizing: border-box;
-    padding-bottom: 8px;
+    padding-bottom: 2px;
     background-color: white;
+}
+.sibi > .comFiled .comment-list > .userBB:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    right: 10%;
+    height: 1px;
+    background: rgba(0,0,0,.1);
 }
 .replyTools {
     width: 40px;
@@ -787,6 +776,7 @@ header {
     z-index: 1;
 }.replyBtn > i {
     color: rgba(0,0,0,.35);
+    font-size: 20px;
  }.replyBtn > a {
     display: block;
     height: 40px;
@@ -795,59 +785,50 @@ header {
     z-index: 1;
     opacity: 0;
    }
-.userBB:after {
-    content: '';
-    width: 3px;
-    height: 50px;
-    background: lightblue;
-    position: absolute;
-    top: 30px;
-    right: 0;
-}
-.comment-children > ol > .userBB:after {
-    background: #D2C2ED;
-}
 .userData {
     position: relative;
-    padding: 3px 20px;
-    margin: 10px 0;
+    padding: 3px 16px;
+    margin: 5px 0;
+    display: flex;
 }
 .userIcon {
-    width: 65px;
-    height: 65px;
     position: relative;
     display: flex;
     align-items: center;
+    box-sizing: border-box;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
 }
 .userIcon > img {
     border-radius: 50%;
-    position: absolute;
+    border: 3px solid white;
+    box-shadow: 0 1px 6px rgba(0,0,0,.22);
+    box-sizing: border-box;
 }
 .userName {
     min-width: 200px;
-    height: 65px;
-    position: absolute;
-    right: -200px;
-    padding-left: 12px;
+    padding-left: 8px;
     box-sizing: border-box;
 }
 
 .name {
-    font-size: 18px;
-    height: 40px;
-    line-height: 45px;
+    font-size: 16px;
+    height: 36px;
+    line-height: 44px;
 }
 .Jurisdiction {
-    height: 25px;
+    font-size: 13px;
 }
 .userBB-Content {
     width: 100%;
     padding: 0 24px;
     box-sizing: border-box;
+    font-size: 14px;
 }
 .comment-list {
     position: relative;
-    padding-left: 0.2em !important;
+    padding-left: 0 !important;
 }
 /*archive*/
 .vCard {
@@ -858,22 +839,37 @@ header {
 .find-card-data {
     list-style: none;
 }
-/* animate */
-.controlBtnSS {
-     animation: cbss 0.45s;
-     animation-fill-mode : forwards;
- }
-@keyframes cbss {
-    0% {transform: rotateY(0);background-image: linear-gradient(120deg, #a1c4fd 100%, #c2e9fb 0%);}
-    100% {transform: rotateY(180deg) ;background-image: none}
+
+/*tags*/
+.comTool > div {
+    margin-top: 6px;
 }
-.controlBtnSB {
-    animation: cbsb 0.45s;
-    animation-fill-mode : forwards;
+.tags-list {
+    padding-left: 0 !important;
 }
-@keyframes cbsb {
-    0% {transform: rotateY(180deg) ;background-image: none}
-    100% {transform: rotateY(0);background-image: linear-gradient(120deg, #a1c4fd 100%, #c2e9fb 0%);}
+.tags-list a:hover {
+    box-shadow: 0 4px 12px -1px rgba(0,0,0,.25);
+}
+.tags-list a {
+    color: white !important;
+    font-size: 12px;
+    list-style: none;
+    display: inline-block;
+    padding: 0 16px;
+    border-radius: 3px;
+    background: #97a1e2;
+    margin-right: 5px;
+    box-shadow: 0 2px 6px -1px rgba(0,0,0,.2);
+    transition: all .5s;
+    will-change: transform;
+}
+.visitor img{
+    border: 3px solid white;
+    box-shadow: 0 1px 5px rgba(0,0,0,.23);
+    margin: 0 3px 3px 0;
+}
+.visitorName {
+    display: none;
 }
 
 /* 搜索结果 */
@@ -905,21 +901,18 @@ header {
 
 /* 0.1后新增样式 */
 .vMenu {
-    width: 190px;
+    width: 220px;
     overflow: hidden;
     min-width: 190px;
     height: 100%;
-    box-shadow: 0 0 3px rgba(0,0,0,.15);
     position: fixed;
     right: 0;
     top: 0;
     z-index: 99;
-}
-.v-menu-assembly-1 {
-    width: 100%;
-    height: 20%;
-    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-    position: relative;
+    box-sizing: border-box;
+    padding-top: 65px;
+    background-color: #EEF4F7;
+    transition: all .3s;
 }
 .Blog-logo {
     width: 75%;
@@ -929,67 +922,30 @@ header {
     top: 50%;
 }
 .iam-img {
-    width: 88%;
+    width: 100px;
+    height: 100px;
     margin: 0 auto;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 130px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,.15);
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 1px 6px -1px rgba(0,0,0,.2);
 }
 .iam-t {
     min-height: 100px;
     box-sizing: border-box;
     color: gray;
     margin-top: 10px;
-}
-.v-menu-assembly-2 {
-    width: 100%;
-    height: 80%;
-    background: white;
-}
-.vMenu-onBtn {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 0;
-    z-index: 100;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-.small-vMenu-list {
-    width: 50px;
-    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-    position: absolute;
-    left: -50px;
-    top: 0;
-    height: 100%;
-    z-index: 99;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.small-vMenu-list > a > li {
-    width: 50px;
-    height: 50px;
-    list-style: none;
-    line-height: 50px;
     text-align: center;
 }
-.small-vMenu-list > a > li > i {
-    color: white;
-}
-.vMenu-onBtn > i {
-    color: white;
+.iam-t span {color:rgba(0,0,0,.8);line-height: 42px;font-size: 20px;text-transform: Uppercase}
+.iam-t p {font-size: 14px;line-height: 1.35}
+.v-menu-assembly {
+    width: 100%;
 }
 .vMenu-item-list {
     position: relative;
-    top: 225px;
     text-align: center;
 }
 .vMenu-item-list > a > li {
@@ -1000,36 +956,6 @@ header {
     cursor: pointer;
     line-height: 40px;
 }
-
-.mobie-head {
-    display: none;
-    width: 70%;
-    height: 50px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    position: absolute;
-    bottom: 0;
-    z-index: 99;
-    color: white;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 50px;
-    text-align: left;
-    box-sizing: border-box;
-    padding: 0 16px;
-}
-
-.shading {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background: rgba(0,0,0,.1);
-    z-index: 99;
-}
-
 /* pagefile */
 .pagefile-body {
     color: rgba(0,0,0,.45);
@@ -1123,12 +1049,11 @@ header {
     color: gray;
     padding: 0 !important;
     margin-bottom: 30px;
-    background: white;
 }
 .i-tell-content {
     box-sizing: border-box;
-    padding: 16px 20px !important;
-    margin-bottom: 30px;
+    background: white;
+    padding-bottom: 1px;
 }
 .can-you-Tell-me {
     height: 240px;
@@ -1145,8 +1070,46 @@ header {
 .tellYou > .sibi > .nextPrev {
     display: none;
 }
-
+@media screen and (max-width: 1475px){
+    .vMenu {
+        transform: translate(220px,0);
+        z-index: 99999;
+    }
+    header {padding: 0;padding-right: 0 !important;}
+    #header {border-radius: 0}
+    body {
+        padding-right: 0;
+    }
+    .control {width: 100%}
+    .overlay {
+        position: fixed;
+        z-index: 0;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.15);
+        display: none;
+    }
+}
+@media screen and (max-width: 1240px) {
+    .loginBtn {
+        display: none;
+    }
+}
+@media screen and (max-width: 1023px){
+    .vBox {position: relative}
+}
+@media screen and (max-width: 800px){
+    .loginBtn {
+        display: none;
+    }
+}
 @media screen and (max-width: 600px){
+    .i-tellYou {
+        margin-bottom: 0;
+    }
+
     .archives ul {
         padding-left: 0 !important;
     }
@@ -1159,12 +1122,12 @@ header {
         width: 100% !important;
     }
     .vBox {
-        width: 100% !important;
         padding-bottom: 0 !important;
+        width: 100%;
+        position: relative;
     }
     /* 侧边栏适配方案 */
     .control {
-        width: 100% !important;
         min-height: 450px;
         border-radius: 0 !important;
         opacity: 1 !important;
@@ -1172,11 +1135,8 @@ header {
         padding-top: 32px;
     }
     .blogBody {
+        width: 100%; !important;
         margin-bottom: 0 !important;
-    }
-    .right-pageTagMenu {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
     }
     .blogBody.mdui-container-fluid {
         padding-left: 0 !important;
@@ -1198,74 +1158,23 @@ header {
     .cardContent {
         height: auto !important;
     }
-    /* header适配方案 */
-    .header-tab-1:first-child {
-        padding-top: 10px;
-    }
-    .header-tab-1 > li {
-        float: none !important;
-    }
-    .header-tab-2 {
-        text-align: right;
-        float: none !important;
-    }
-    .typ-item {
-        display: none;
-    }
-    .header-tab-1 > li > a {
-        color: white !important;
-    }
-    header {
-        z-index: 1000;
-        position: fixed;
-        top: -160px;
-        background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%) !important;
-        padding: 0;
-        right: 0;
-    }
-    #controlBtn {
-        box-sizing: border-box;
-        background-image: linear-gradient(120deg, #a1c4fd 100%, #c2e9fb 0%);
-       display: block;
-        padding: 0 12px;
-        position: relative;
-        z-index: auto;
-    }
-    .mb-btn {width: 40px;
-        height: 50px;
-        border: none;
-        background: transparent;
-        outline: none;
-    }
-    .mb-btn > i {
-        color: white;
-    }
-    #controlBtn > i {
-        color: white;
-    }
-    /*  页面与header的交互 */
 
     /* 用户评论 */
+    .comTool > div {
+        padding: 0 18px;
+    }
+    .comTool {
+        margin-top: 0 !important;
+    }
+    .comTool h4 {
+        box-sizing: border-box;
+        padding: 0 18px;
+    }
+    .comFiled {
+        padding: 0 0;
+    }
     .newBB {
         padding: 0 20px;
-    }
-    .userBB {
-        padding-bottom: 1px;
-    }
-    .userIcon {
-        width: 70px;
-        height: 70px;
-    }
-    .userName {
-        height: 70px;
-    }
-    .name {
-        height: 45px;
-        line-height: 45px;
-    }
-    .Jurisdiction {
-        height: 25px;
-        line-height: 25px;
     }
     .comment-list {
         margin-bottom: 0.65em !important;
@@ -1281,12 +1190,6 @@ header {
         float: none;
         text-align: left;
     }
-    .loginBtn {
-        background: transparent;
-    }
-    .loginBtn > a {
-        color: rgba(0,0,0,.45) !important;
-    }
 
     .comments {
         padding: 0 12px;
@@ -1300,23 +1203,29 @@ header {
 
 
     /*vMenu 移动端适配*/
-    .mobie-head {
-        display: block;
-    }
-    #open-Vmenu {
-        z-index: 99999;
-    }
     .vMenu {
         z-index: 1000;
-        right: -190px;
         top: 0;
         visibility: visible;
     }
-    .vMenu-onBtn {
-        display: none;
-    }
+    .loginBtn {display: none}
+    .searchBtn {display: inline-block}
+    #header form{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+        z-index: -1;
+    }#search {width: 100%;background-color: white}
+    header {
+        padding: 0;
+    }#header {
+    border-radius: 0;
+    padding: 0 12px;
+         }
     body {
         padding-top: 0;
+        padding-right: 0;
     }
     footer {
         min-height: 105px;
@@ -1344,40 +1253,8 @@ header {
         right: 16px;
     }
 
-    .search {
-        display: none;
-    }
-    .control-border {
-        display: none;
-    }
-    .mobie-head-search {
-        display: flex;
-    }
-
     .nextPrev {width: 100%;right: 0%;text-align: center}
 
-}
-@media screen and (max-width: 1550px){
-    .control {
-        width: 100%;
-    }
-    .blogBody-pos {
-        left: 2% !important;
-    }
-}
-@media screen and (max-width: 1022px){
-    .right-pageTagMenu {
-        margin-left: 0;
-    }
-    .blogBody-pos {
-        left: 0 !important;
-    }
-}
-@media screen and (max-width: 1070px){
-    #body {
-        box-sizing: border-box;
-        padding-right: 50px;
-    }
 }
 @media screen and (max-width: 1240px){
     .pageTag {
