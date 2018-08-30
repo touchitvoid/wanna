@@ -24,8 +24,7 @@
         <a id="wsTitle" class="mdui-text-truncate" href="<?php $this->options->siteUrl(); ?>" style="flex: 1;background-image: url('<?php $this->options->hIcon() ?>')">
             <?php $this->options->title() ?>
         </a>
-        <form style="height: 100%">
-            <input type="text" style="display:none">
+        <form style="height: 100%" action="" method="post">
             <input type="text" autocomplete="off" name="s" placeholder="回车进行搜索" id="search" />
         </form>
         <div class="header-tool">

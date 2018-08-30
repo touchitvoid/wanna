@@ -27,11 +27,13 @@
                         &nbsp<?php _e('时间: '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>
                     </p>
                     <p>
-                        <a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('还没有评论', '1 条评论', '%d 条评论'); ?></a>
+                        <a href="<?php $this->permalink() ?>">
+                            阅读更多
+                        </a>
                     </p>
                     <div class="mdui-divider" style="margin-bottom: 10px"></div>
                     <p>
-                        <?php $this->excerpt(20,'...'); ?>
+                        <?php $this->excerpt(10,'...'); ?>
                     </p>
                 </div>
             </article>
