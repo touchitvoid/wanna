@@ -4,7 +4,7 @@
         <div class="Blog-logo">
             <div class="iam-img" id="logo"></div>
             <div class="iam-t">
-                <span>Void</span>
+                <span><?php $this->options->title() ?></span>
                 <p><?php $this->options->description() ?></p>
             </div>
         </div>
