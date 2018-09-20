@@ -10,7 +10,7 @@
         <div class="mdui-col-md-4">
             <div id="yy520"></div>
             <p>
-                Copyright © 2018 Void Blog
+                <?php Typecho_Widget::widget('Widget_Options')->copyright();  ?>
             </p>
         </div>
     </div>

@@ -20,6 +20,9 @@ function themeConfig($form) {
     $pay = new Typecho_Widget_Helper_Form_Element_Text('pay', NULL, NULL, _t('赞赏二维码'), _t('推荐支付宝or微信二维码'));
     $form->addInput($pay);
 
+    $copyright = new Typecho_Widget_Helper_Form_Element_Text('copyright', NULL, NULL, _t('copyright信息'), _t('默认为空'));
+    $form->addInput($copyright);
+
     $comNum = new Typecho_Widget_Helper_Form_Element_Select('comNum', array(
         '6'=>'默认',
         '7'=>'7',

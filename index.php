@@ -1,10 +1,10 @@
 <?php
 /**
- * 需要关闭 “垃圾评论保护” 和 “检查评论来源页 URL 是否与文章链接一致”
+ * 需要关闭 “垃圾评论保护” 和 “检查评论来源页 URL 是否与文章链接一致 QQ1544020198 有问题联系”
  *
- * @package snow
+ * @package Wanna
  * @author Void
- * @version 1.2
+ * @version 1.3
  * @link http://typecho.org
  */
 
